@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — Extion Consulting</title>
+  <meta name="description" content="Consulting services for every stage of business: idea validation, business audits, growth systems, leadership and implementation support.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big&family=Radio+Canada:wght@400;500;600;700&family=Roboto:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo" aria-label="Extion Consulting — home">
+        <span>Extion<br><span class="logo__accent">Consulting</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">HOME</a>
+        <a href="services.html" aria-current="page">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="resources.html">RESOURCES</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Main" hidden>
+      <a href="index.html">HOME</a>
+      <a href="services.html" aria-current="page">SERVICES</a>
+      <a href="about.html">ABOUT</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--page hero--dark">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&amp;h=700&amp;fit=crop&amp;auto=format" alt="Services" width="1400" height="700" fetchpriority="high">
+      <div class="hero__card">
+        <p class="hero__eyebrow">SERVICES</p>
+        <h1 class="hero__heading">Built for every stage of business</h1>
+        <a href="contact.html" class="btn">Say Hello</a>
+      </div>
+    </section>
+
+    <section class="container page-intro">
+      <p>Every business journey is unique. Our consulting services are thoughtfully designed to address the specific challenges at each stage of growth, helping you build, strengthen, and scale your business with clarity, structure, and confidence.</p>
+    </section>
+
+    <section class="container table-section">
+      <div class="table-toolbar">
+        <h2 class="table-toolbar__title">Our Services</h2>
+        <input type="search" class="search-input" placeholder="Filter services..." aria-label="Filter services" data-search-for="services-table">
+      </div>
+
+      <div class="table-wrap">
+        <table class="data-table" id="services-table" data-default-sort="num">
+          <thead>
+            <tr>
+              <th data-sort="num" scope="col"><button class="sort-btn" type="button"># <span class="sort-icon" aria-hidden="true">↑</span></button></th>
+              <th data-sort="title" scope="col"><button class="sort-btn" type="button">Service <span class="sort-icon" aria-hidden="true">↕</span></button></th>
+              <th data-sort="subtitle" scope="col"><button class="sort-btn" type="button">Focus Area <span class="sort-icon" aria-hidden="true">↕</span></button></th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+
+          <tbody data-item data-num="01" data-title="GET STARTED" data-subtitle="Idea Validation &amp; Business Design" data-search="GET STARTED Idea Validation &amp; Business Design">
+            <tr class="row row--clickable">
+              <td class="cell-num">01</td>
+              <td class="cell-title">GET STARTED</td>
+              <td class="cell-sub">Idea Validation &amp; Business Design</td>
+              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-1" aria-label="Show details for Get Started">+</button></td>
+            </tr>
+            <tr class="details-row" id="svc-details-1" hidden>
+              <td colspan="4">
+                <p class="details__text">Turn promising ideas into viable businesses through research, validation, strategic planning, and structured execution.</p>
+                <ul class="details__list">
+                  <li>Market Research &amp; Analysis</li>
+                  <li>Business Model Design</li>
+                  <li>Go-to-Market Strategy</li>
+                  <li>Financial Projections</li>
+                  <li>Risk Assessment</li>
+                </ul>
+                <a href="contact.html" class="btn">Contact Us</a>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody data-item data-num="02" data-title="Strengthen your business" data-subtitle="Business Audit &amp; Performance Improvement" data-search="Strengthen your business Business Audit &amp; Performance Improvement">
+            <tr class="row row--clickable">
+              <td class="cell-num">02</td>
+              <td class="cell-title">Strengthen your business</td>
+              <td class="cell-sub">Business Audit &amp; Performance Improvement</td>
+              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-2" aria-label="Show details for Strengthen your business">+</button></td>
+            </tr>
+            <tr class="details-row" id="svc-details-2" hidden>
+              <td colspan="4">
+                <p class="details__text">Identify hidden gaps, improve performance, and overcome growth challenges with comprehensive business assessments and audits.</p>
+                <ul class="details__list">
+                  <li>Business Health Assessment</li>
+                  <li>Process Optimization</li>
+                  <li>Team &amp; Culture Audit</li>
+                  <li>Revenue Improvement</li>
+                  <li>Cost Reduction Strategy</li>
+                </ul>
+                <a href="contact.html" class="btn">Contact Us</a>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody data-item data-num="03" data-title="Build Systems to Scale" data-subtitle="Growth Strategy &amp; Systems Design" data-search="Build Systems to Scale Growth Strategy &amp; Systems Design">
+            <tr class="row row--clickable">
+              <td class="cell-num">03</td>
+              <td class="cell-title">Build Systems to Scale</td>
+              <td class="cell-sub">Growth Strategy &amp; Systems Design</td>
+              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-3" aria-label="Show details for Build Systems to Scale">+</button></td>
+            </tr>
+            <tr class="details-row" id="svc-details-3" hidden>
+              <td colspan="4">
+                <p class="details__text">Create scalable systems, empower your team, and prepare your business for its next stage of growth with structured frameworks.</p>
+                <ul class="details__list">
+                  <li>Scalability Framework</li>
+                  <li>Systems &amp; Process Design</li>
+                  <li>Team Scaling Strategy</li>
+                  <li>Technology Roadmap</li>
+                  <li>Partnership Strategy</li>
+                </ul>
+                <a href="contact.html" class="btn">Contact Us</a>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody data-item data-num="04" data-title="Lead with clarity" data-subtitle="Leadership &amp; Strategic Direction" data-search="Lead with clarity Leadership &amp; Strategic Direction">
+            <tr class="row row--clickable">
+              <td class="cell-num">04</td>
+              <td class="cell-title">Lead with clarity</td>
+              <td class="cell-sub">Leadership &amp; Strategic Direction</td>
+              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-4" aria-label="Show details for Lead with clarity">+</button></td>
+            </tr>
+            <tr class="details-row" id="svc-details-4" hidden>
+              <td colspan="4">
+                <p class="details__text">Develop stronger leadership, aligned teams, and clear strategic direction to make confident decisions and drive long-term success.</p>
+                <ul class="details__list">
+                  <li>Leadership Coaching</li>
+                  <li>Strategic Planning</li>
+                  <li>OKR &amp; Goal Setting</li>
+                  <li>Team Alignment</li>
+                  <li>Decision Frameworks</li>
+                </ul>
+                <a href="contact.html" class="btn">Contact Us</a>
+              </td>
+            </tr>
+          </tbody>
+
+          <tbody data-item data-num="05" data-title="Last-mile clarity" data-subtitle="Advisory &amp; Implementation Support" data-search="Last-mile clarity Advisory &amp; Implementation Support">
+            <tr class="row row--clickable">
+              <td class="cell-num">05</td>
+              <td class="cell-title">Last-mile clarity</td>
+              <td class="cell-sub">Advisory &amp; Implementation Support</td>
+              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-5" aria-label="Show details for Last-mile clarity">+</button></td>
+            </tr>
+            <tr class="details-row" id="svc-details-5" hidden>
+              <td colspan="4">
+                <p class="details__text">Ongoing advisory support and hands-on implementation assistance to ensure strategies translate into measurable business results.</p>
+                <ul class="details__list">
+                  <li>Monthly Advisory Sessions</li>
+                  <li>Implementation Support</li>
+                  <li>Progress Reviews</li>
+                  <li>Course Corrections</li>
+                  <li>Stakeholder Communication</li>
+                </ul>
+                <a href="contact.html" class="btn">Contact Us</a>
+              </td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr class="empty-row" hidden><td colspan="4">No services match your search.</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="table-note">Click any row to expand details. Click column headers to sort.</p>
+    </section>
+
+    <section class="section-navy">
+      <div class="container how">
+        <div>
+          <h2 class="how__title">How we work with you</h2>
+          <div class="step">
+            <h3 class="step__title">#1 Understand your context</h3>
+            <p class="step__text">We start by deeply understanding your business, challenges, and goals before recommending anything.</p>
+          </div>
+          <div class="step">
+            <h3 class="step__title">#2 Co-create the strategy</h3>
+            <p class="step__text">Your strategy is built with you, not for you — so it fits your reality and your team's capabilities.</p>
+          </div>
+          <div class="step">
+            <h3 class="step__title">#3 Have a strategy — make it real</h3>
+            <p class="step__text">We help translate strategy into action with clear plans, priorities, and accountability systems.</p>
+          </div>
+          <div class="step">
+            <h3 class="step__title">#4 Frequently asked questions</h3>
+            <p class="step__text">Ongoing support ensures the strategy evolves as your business grows and markets shift.</p>
+          </div>
+        </div>
+        <div class="how__media">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&amp;h=600&amp;fit=crop&amp;auto=format" alt="How we work" width="800" height="600" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <div class="banner">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&amp;h=500&amp;fit=crop&amp;auto=format" alt="Business meeting" width="1400" height="500" loading="lazy">
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <a href="index.html" class="logo" aria-label="Extion Consulting — home">
+          <span>Extion<br><span class="logo__accent">Consulting</span></span>
+        </a>
+        <a href="contact.html" class="btn-outline">Get in touch</a>
+      </div>
+      <div>
+        <p class="footer-text">+91-98 XXXX XXXX<br><a href="mailto:info@extionconsulting.com">info@extionconsulting.com</a></p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <div>
+        <address class="footer-text">Head Office:<br>ABC, Sonipat,<br>Haryana - 131001</address>
+        <a href="#" class="footer-link">Accessibility Statement</a>
+      </div>
+      <div>
+        <p class="footer-text">All rights reserved<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extion Consulting</p>
+        <span class="copyright-mark" role="img" aria-label="Copyright">C</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

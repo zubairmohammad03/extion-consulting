@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us — Extion Consulting</title>
+  <meta name="description" content="Every great journey starts with a conversation. Tell Extion Consulting what you're building and let's see how we can help.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big&family=Radio+Canada:wght@400;500;600;700&family=Roboto:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo" aria-label="Extion Consulting — home">
+        <span>Extion<br><span class="logo__accent">Consulting</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="resources.html">RESOURCES</a>
+        <a href="contact.html" aria-current="page">CONTACT</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Main" hidden>
+      <a href="index.html">HOME</a>
+      <a href="services.html">SERVICES</a>
+      <a href="about.html">ABOUT</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="contact.html" aria-current="page">CONTACT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero hero--page hero--tall">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1400&amp;h=600&amp;fit=crop&amp;auto=format" alt="Contact us" width="1400" height="600" fetchpriority="high">
+      <div class="hero__card">
+        <p class="hero__eyebrow">CONTACT US</p>
+        <h1 class="hero__heading">Every great journey always starts with a conversation</h1>
+        <a href="#stay-connected" class="btn">Say Hello</a>
+      </div>
+    </section>
+
+    <section class="container reach">
+      <h2 class="reach__title">Reach out to us</h2>
+      <p class="reach__lead">Every business journey starts with a conversation. Tell us what you're building, and let's see how we can help.</p>
+      <div class="reach-grid">
+        <div>
+          <p class="reach__label">Write an email to us</p>
+          <a class="reach__value" href="mailto:info@Extion.com">info@Extion.com</a>
+        </div>
+        <div>
+          <p class="reach__label">Call us on</p>
+          <p class="reach__value">+91-99XXXXXX00</p>
+        </div>
+      </div>
+      <p class="reach__note">Or</p>
+      <p class="reach__note">Simply fill out the form below</p>
+    </section>
+
+    <section class="connect" id="stay-connected">
+      <div class="container connect__inner">
+        <h2 class="connect__title">Stay<br>Connected</h2>
+        <div class="connect__card">
+          <form class="contact-form">
+            <div class="field">
+              <label for="cf-name">Name*</label>
+              <input id="cf-name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email id*</label>
+              <input id="cf-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="cf-phone">Phone no*</label>
+              <input id="cf-phone" name="phone" type="tel" placeholder="+91- XXXXXXXXXX" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="cf-company">Company name*</label>
+              <input id="cf-company" name="company" type="text" placeholder="Enter your company name" autocomplete="organization" required>
+            </div>
+            <div class="field">
+              <label for="cf-position">Position*</label>
+              <input id="cf-position" name="position" type="text" placeholder="Enter your position or title" autocomplete="organization-title" required>
+            </div>
+            <div class="field">
+              <label for="cf-topic">What would you like to discuss?*</label>
+              <input id="cf-topic" name="topic" type="text" placeholder="E.g. Current challenges, Future roadmap, Growth planning etc." required>
+            </div>
+            <button type="submit" class="btn btn--block">
+              <svg width="20" height="20" viewBox="0 0 29.67 29.67" fill="none" aria-hidden="true"><path d="M4.5 14.83h20M14.83 4.5l10.33 10.33-10.33 10.34" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              SUBMIT
+            </button>
+            <p class="form-error" role="alert" hidden>Sorry, something went wrong. Please try again or email us directly.</p>
+          </form>
+          <div class="form-success" role="status" hidden>
+            <div class="form-success__icon" aria-hidden="true">✓</div>
+            <p class="form-success__title">Thank you!</p>
+            <p class="form-success__text">We'll be in touch shortly.</p>
+            <button type="button" class="form-success__again">Submit another</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="banner banner--tall">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&amp;h=500&amp;fit=crop&amp;auto=format" alt="Team" width="1400" height="500" loading="lazy">
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div>
+        <a href="index.html" class="logo" aria-label="Extion Consulting — home">
+          <span>Extion<br><span class="logo__accent">Consulting</span></span>
+        </a>
+        <a href="contact.html" class="btn-outline">Get in touch</a>
+      </div>
+      <div>
+        <p class="footer-text">+91-98 XXXX XXXX<br><a href="mailto:info@extionconsulting.com">info@extionconsulting.com</a></p>
+        <a href="#" class="footer-link">Privacy Policy</a>
+      </div>
+      <div>
+        <address class="footer-text">Head Office:<br>ABC, Sonipat,<br>Haryana - 131001</address>
+        <a href="#" class="footer-link">Accessibility Statement</a>
+      </div>
+      <div>
+        <p class="footer-text">All rights reserved<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extion Consulting</p>
+        <span class="copyright-mark" role="img" aria-label="Copyright">C</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
