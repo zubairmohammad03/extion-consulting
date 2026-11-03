@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resources — Extion Consulting</title>
-  <meta name="description" content="Guides, templates, checklists, frameworks, articles and webinars for building better businesses.">
+  <meta name="description" content="Practical frameworks, tools, insights, and real-world examples to help entrepreneurs, startups, and MSMEs build better businesses.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big&family=Radio+Canada:wght@400;500;600;700&family=Roboto:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big&family=Radio+Canada:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -17,9 +17,7 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="logo" aria-label="Extion Consulting — home">
-        <span>Extion<br><span class="logo__accent">Consulting</span></span>
-      </a>
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Extion Consulting — home" width="179" height="61"></a>
       <nav class="main-nav" aria-label="Main">
         <a href="index.html">HOME</a>
         <a href="services.html">SERVICES</a>
@@ -27,9 +25,7 @@
         <a href="resources.html" aria-current="page">RESOURCES</a>
         <a href="contact.html">CONTACT</a>
       </nav>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Main" hidden>
       <a href="index.html">HOME</a>
@@ -41,102 +37,160 @@
   </header>
 
   <main id="main">
-    <section class="res-hero">
-      <div class="container">
-        <p class="res-hero__eyebrow">RESOURCES</p>
-        <h1 class="res-hero__title">Practical tools for building better businesses</h1>
+    <section class="hero">
+      <div class="hero__media"><img src="assets/img/about-hero.jpg" alt="The Extion team standing together outdoors" width="1800" height="1200" fetchpriority="high" style="object-position: center 57%"></div>
+      <div class="hero__card">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">RESOURCES</p>
+          <h1 class="hero__title">Learn. Apply.<br>Build Better</h1>
+        </div>
+        <a href="contact.html#stay-connected" class="btn" data-popup="Say Hello">Say Hello</a>
       </div>
     </section>
 
-    <section class="container resources">
-      <div class="chips chips--lg" role="group" aria-label="Filter by type" data-chips-for="resources">
-        <button class="chip" type="button" data-value="All" aria-pressed="true">All</button>
-        <button class="chip" type="button" data-value="Guide" aria-pressed="false">Guide</button>
-        <button class="chip" type="button" data-value="Template" aria-pressed="false">Template</button>
-        <button class="chip" type="button" data-value="Checklist" aria-pressed="false">Checklist</button>
-        <button class="chip" type="button" data-value="Framework" aria-pressed="false">Framework</button>
-        <button class="chip" type="button" data-value="Article" aria-pressed="false">Article</button>
-        <button class="chip" type="button" data-value="Webinar" aria-pressed="false">Webinar</button>
-      </div>
+    <section class="section res-intro">
+      <h2 class="heading">Resources for building better businesses</h2>
+      <p class="rc-text">Practical frameworks, tools, insights, and real-world examples to help entrepreneurs, startups, and MSMEs navigate business challenges with greater clarity.</p>
+      <nav class="res-links" aria-label="Resource sections">
+        <a href="#frameworks">Explore Frameworks</a>
+        <a href="#case-studies">View Case Studies</a>
+        <a href="#tools">Use Our Tools</a>
+      </nav>
+    </section>
 
-      <div class="res-grid">
-        <article class="res-card" data-category="Guide">
-          <div class="res-card__meta">
-            <span class="tag tag--bold">Guide</span>
-            <time class="res-card__date" datetime="2026-08">Aug 2026</time>
-          </div>
-          <h2 class="res-card__title">Business Model Canvas: A Practical Guide for Startups</h2>
-          <p class="res-card__text">Learn how to map your business model visually and validate assumptions before investing resources.</p>
-          <a href="#" class="res-card__link">Access resource →</a>
+    <section class="section frameworks" id="frameworks">
+      <h2 class="heading">Frameworks for Startups</h2>
+      <div class="frameworks-grid">
+        <article id="jobs-to-be-done" data-resource="Jobs to Be Done" data-tag="Framework">
+          <a class="framework" href="#">
+            <div class="framework__media"><img src="assets/img/purpose.jpg" alt="" width="1200" height="800" loading="lazy"></div>
+            <span class="framework__title">Jobs to Be Done</span>
+          </a>
         </article>
-        <article class="res-card" data-category="Template">
-          <div class="res-card__meta">
-            <span class="tag tag--bold">Template</span>
-            <time class="res-card__date" datetime="2026-07">Jul 2026</time>
-          </div>
-          <h2 class="res-card__title">Go-to-Market Strategy Template</h2>
-          <p class="res-card__text">A step-by-step template to plan your launch, define your target segments, and build your growth engine.</p>
-          <a href="#" class="res-card__link">Access resource →</a>
+        <article id="founder-market-fit" data-resource="Founder-Market Fit" data-tag="Framework">
+          <a class="framework" href="#">
+            <div class="framework__media"><img src="assets/img/purpose.jpg" alt="" width="1200" height="800" loading="lazy"></div>
+            <span class="framework__title">Founder-Market Fit</span>
+          </a>
         </article>
-        <article class="res-card" data-category="Checklist">
-          <div class="res-card__meta">
-            <span class="tag tag--bold">Checklist</span>
-            <time class="res-card__date" datetime="2026-06">Jun 2026</time>
-          </div>
-          <h2 class="res-card__title">Business Health Audit Checklist</h2>
-          <p class="res-card__text">40+ questions to identify operational gaps, team misalignments, and growth blockers in your business.</p>
-          <a href="#" class="res-card__link">Access resource →</a>
-        </article>
-        <article class="res-card" data-category="Framework">
-          <div class="res-card__meta">
-            <span class="tag tag--bold">Framework</span>
-            <time class="res-card__date" datetime="2026-05">May 2026</time>
-          </div>
-          <h2 class="res-card__title">Scaling Readiness Framework</h2>
-          <p class="res-card__text">Assess whether your business is truly ready to scale with this structured readiness diagnostic.</p>
-          <a href="#" class="res-card__link">Access resource →</a>
-        </article>
-        <article class="res-card" data-category="Article">
-          <div class="res-card__meta">
-            <span class="tag tag--bold">Article</span>
-            <time class="res-card__date" datetime="2026-04">Apr 2026</time>
-          </div>
-          <h2 class="res-card__title">5 Common Mistakes Founders Make When Growing</h2>
-          <p class="res-card__text">Insights from consulting 100+ startups and MSMEs on the most costly and avoidable growth mistakes.</p>
-          <a href="#" class="res-card__link">Access resource →</a>
-        </article>
-        <article class="res-card" data-category="Webinar">
-          <div class="res-card__meta">
-            <span class="tag tag--bold">Webinar</span>
-            <time class="res-card__date" datetime="2026-03">Mar 2026</time>
-          </div>
-          <h2 class="res-card__title">Strategy vs. Execution: Why Both Matter</h2>
-          <p class="res-card__text">Recording of our founder roundtable on building execution discipline without losing strategic clarity.</p>
-          <a href="#" class="res-card__link">Access resource →</a>
+        <article id="ideation-techniques" data-resource="Ideation Techniques" data-tag="Framework">
+          <a class="framework" href="#">
+            <div class="framework__media"><img src="assets/img/purpose.jpg" alt="" width="1200" height="800" loading="lazy"></div>
+            <span class="framework__title">Ideation Techniques</span>
+          </a>
         </article>
       </div>
     </section>
+
+    <section class="section library" id="tools">
+      <h2 class="heading">Our Tools &amp; Guides</h2>
+      <p class="rc-text library__intro">Templates, checklists, and guides you can put to work in your business today.</p>
+      <div class="thumb-grid">
+        <article class="thumb-card" id="business-model-canvas" data-resource="Business Model Canvas: A Practical Guide for Startups" data-tag="Guide">
+          <div class="thumb-card__media"><img src="assets/img/stage-idea.jpg" alt="" width="700" height="467" loading="lazy"></div>
+          <div class="thumb-card__body">
+            <div class="thumb-card__meta"><span class="tag">Guide</span><time class="thumb-card__date" datetime="2026-08">Aug 2026</time></div>
+            <h3 class="thumb-card__title">Business Model Canvas: A Practical Guide for Startups</h3>
+            <p class="thumb-card__text">Learn how to map your business model visually and validate assumptions before investing resources.</p>
+            <a href="#" class="thumb-card__link">Access resource →</a>
+          </div>
+        </article>
+        <article class="thumb-card" id="go-to-market-template" data-resource="Go-to-Market Strategy Template" data-tag="Template">
+          <div class="thumb-card__media"><img src="assets/img/stage-building.jpg" alt="" width="700" height="467" loading="lazy"></div>
+          <div class="thumb-card__body">
+            <div class="thumb-card__meta"><span class="tag">Template</span><time class="thumb-card__date" datetime="2026-07">Jul 2026</time></div>
+            <h3 class="thumb-card__title">Go-to-Market Strategy Template</h3>
+            <p class="thumb-card__text">A step-by-step template to plan your launch, define your target segments, and build your growth engine.</p>
+            <a href="#" class="thumb-card__link">Access resource →</a>
+          </div>
+        </article>
+        <article class="thumb-card" id="health-audit-checklist" data-resource="Business Health Audit Checklist" data-tag="Checklist">
+          <div class="thumb-card__media"><img src="assets/img/stage-strengthening.jpg" alt="" width="700" height="467" loading="lazy"></div>
+          <div class="thumb-card__body">
+            <div class="thumb-card__meta"><span class="tag">Checklist</span><time class="thumb-card__date" datetime="2026-06">Jun 2026</time></div>
+            <h3 class="thumb-card__title">Business Health Audit Checklist</h3>
+            <p class="thumb-card__text">40+ questions to identify operational gaps, team misalignments, and growth blockers in your business.</p>
+            <a href="#" class="thumb-card__link">Access resource →</a>
+          </div>
+        </article>
+        <article class="thumb-card" id="scaling-readiness" data-resource="Scaling Readiness Framework" data-tag="Framework">
+          <div class="thumb-card__media"><img src="assets/img/stage-scale.jpg" alt="" width="700" height="467" loading="lazy"></div>
+          <div class="thumb-card__body">
+            <div class="thumb-card__meta"><span class="tag">Framework</span><time class="thumb-card__date" datetime="2026-05">May 2026</time></div>
+            <h3 class="thumb-card__title">Scaling Readiness Framework</h3>
+            <p class="thumb-card__text">Assess whether your business is truly ready to scale with this structured readiness diagnostic.</p>
+            <a href="#" class="thumb-card__link">Access resource →</a>
+          </div>
+        </article>
+        <article class="thumb-card" id="founder-mistakes" data-resource="5 Common Mistakes Founders Make When Growing" data-tag="Article">
+          <div class="thumb-card__media"><img src="assets/img/about-intro.jpg" alt="" width="900" height="506" loading="lazy"></div>
+          <div class="thumb-card__body">
+            <div class="thumb-card__meta"><span class="tag">Article</span><time class="thumb-card__date" datetime="2026-04">Apr 2026</time></div>
+            <h3 class="thumb-card__title">5 Common Mistakes Founders Make When Growing</h3>
+            <p class="thumb-card__text">Insights from consulting 100+ startups and MSMEs on the most costly and avoidable growth mistakes.</p>
+            <a href="#" class="thumb-card__link">Access resource →</a>
+          </div>
+        </article>
+        <article class="thumb-card" id="strategy-vs-execution" data-resource="Strategy vs. Execution: Why Both Matter" data-tag="Webinar">
+          <div class="thumb-card__media"><img src="assets/img/banner-meeting.jpg" alt="" width="1351" height="580" loading="lazy"></div>
+          <div class="thumb-card__body">
+            <div class="thumb-card__meta"><span class="tag">Webinar</span><time class="thumb-card__date" datetime="2026-03">Mar 2026</time></div>
+            <h3 class="thumb-card__title">Strategy vs. Execution: Why Both Matter</h3>
+            <p class="thumb-card__text">Recording of our founder roundtable on building execution discipline without losing strategic clarity.</p>
+            <a href="#" class="thumb-card__link">Access resource →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section library" id="case-studies">
+      <h2 class="heading">Case Studies</h2>
+      <p class="rc-text library__intro">Real business journeys from our engagements.</p>
+      <div class="thumb-grid">
+        <article class="thumb-card" id="case-studies-soon" data-resource="Case studies are on their way" data-tag="Case study">
+          <div class="thumb-card__media"><img src="assets/img/service-strengthen.jpg" alt="" width="430" height="173" loading="lazy"></div>
+          <div class="thumb-card__body">
+            <div class="thumb-card__meta"><span class="tag">Coming soon</span></div>
+            <h3 class="thumb-card__title">Case studies are on their way</h3>
+            <p class="thumb-card__text">We're documenting real journeys from founders we work with. Want to hear how we've helped businesses like yours? Ask us directly.</p>
+            <a href="contact.html#stay-connected" class="thumb-card__link" data-popup="Ask about our work">Ask about our work →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section search-book" id="search">
+      <label for="resource-search">Search and Book</label>
+      <input type="search" id="resource-search" placeholder="Search frameworks, tools and guides…" autocomplete="off" aria-controls="search-results">
+      <ul class="search-results" id="search-results" aria-live="polite" hidden></ul>
+      <div class="calendar">
+        <h2 class="calendar__title">WORKSHOP<br>CALENDAR</h2>
+        <p>Upcoming workshop dates will be announced here.</p>
+        <a href="contact.html#stay-connected" class="btn" data-popup="Ask about workshops" data-topic="I'd like to know about upcoming workshops.">Ask about workshops</a>
+      </div>
+    </section>
+
+    <div class="banner banner--bottom res-banner">
+      <img src="assets/img/banner-team.jpg" alt="Founders and experts in a workshop session" width="1800" height="830" loading="lazy">
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div>
-        <a href="index.html" class="logo" aria-label="Extion Consulting — home">
-          <span>Extion<br><span class="logo__accent">Consulting</span></span>
-        </a>
-        <a href="contact.html" class="btn-outline">Get in touch</a>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Extion Consulting — home" width="179" height="61" loading="lazy"></a>
+        <a href="contact.html#stay-connected" class="btn-outline" data-popup="Get in touch">Get in touch</a>
       </div>
-      <div>
+      <div class="footer-col">
         <p class="footer-text">+91-98 XXXX XXXX<br><a href="mailto:info@extionconsulting.com">info@extionconsulting.com</a></p>
         <a href="#" class="footer-link">Privacy Policy</a>
       </div>
-      <div>
+      <div class="footer-col">
         <address class="footer-text">Head Office:<br>ABC, Sonipat,<br>Haryana - 131001</address>
         <a href="#" class="footer-link">Accessibility Statement</a>
       </div>
-      <div>
-        <p class="footer-text">All rights reserved<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extion Consulting</p>
-        <span class="copyright-mark" role="img" aria-label="Copyright">C</span>
+      <div class="footer-col">
+        <p class="footer-text">All rights reserved<br>© Extion Consulting</p>
       </div>
     </div>
   </footer>

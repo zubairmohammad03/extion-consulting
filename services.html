@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services — Extion Consulting</title>
-  <meta name="description" content="Consulting services for every stage of business: idea validation, business audits, growth systems, leadership and implementation support.">
+  <meta name="description" content="Business support that meets you where you are: get started, strengthen your business, build systems to scale, and lead with clarity.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big&family=Radio+Canada:wght@400;500;600;700&family=Roboto:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big&family=Radio+Canada:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -17,9 +17,7 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="logo" aria-label="Extion Consulting — home">
-        <span>Extion<br><span class="logo__accent">Consulting</span></span>
-      </a>
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Extion Consulting — home" width="179" height="61"></a>
       <nav class="main-nav" aria-label="Main">
         <a href="index.html">HOME</a>
         <a href="services.html" aria-current="page">SERVICES</a>
@@ -27,9 +25,7 @@
         <a href="resources.html">RESOURCES</a>
         <a href="contact.html">CONTACT</a>
       </nav>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Main" hidden>
       <a href="index.html">HOME</a>
@@ -41,205 +37,350 @@
   </header>
 
   <main id="main">
-    <section class="hero hero--page hero--dark">
-      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&amp;h=700&amp;fit=crop&amp;auto=format" alt="Services" width="1400" height="700" fetchpriority="high">
+    <section class="hero">
+      <div class="hero__media"><img src="assets/img/services-hero.jpg" alt="A business owner in his warehouse holding a tablet" width="1800" height="600" fetchpriority="high"></div>
       <div class="hero__card">
-        <p class="hero__eyebrow">SERVICES</p>
-        <h1 class="hero__heading">Built for every stage of business</h1>
-        <a href="contact.html" class="btn">Say Hello</a>
+        <div class="hero__copy">
+          <p class="hero__eyebrow hero__eyebrow--deep">SERVICES</p>
+          <h1 class="hero__title">Business Support<br>That Meets You<br>Where You Are</h1>
+        </div>
+        <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Talk to Us">Talk to Us</a>
       </div>
     </section>
 
-    <section class="container page-intro">
-      <p>Every business journey is unique. Our consulting services are thoughtfully designed to address the specific challenges at each stage of growth, helping you build, strengthen, and scale your business with clarity, structure, and confidence.</p>
-    </section>
-
-    <section class="container table-section">
-      <div class="table-toolbar">
-        <h2 class="table-toolbar__title">Our Services</h2>
-        <input type="search" class="search-input" placeholder="Filter services..." aria-label="Filter services" data-search-for="services-table">
+    <section class="section svc-intro">
+      <h2 class="heading heading--deep heading--strong">Services</h2>
+      <p class="rc-text">Every business has different challenges at different stages. Our services combine strategy, innovation, research, design, and execution to help you build, strengthen, and scale with clarity.</p>
+      <div class="center">
+        <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Talk to Us About Your Business">Talk to Us About Your Business</a>
       </div>
 
-      <div class="table-wrap">
-        <table class="data-table" id="services-table" data-default-sort="num">
-          <thead>
-            <tr>
-              <th data-sort="num" scope="col"><button class="sort-btn" type="button"># <span class="sort-icon" aria-hidden="true">↑</span></button></th>
-              <th data-sort="title" scope="col"><button class="sort-btn" type="button">Service <span class="sort-icon" aria-hidden="true">↕</span></button></th>
-              <th data-sort="subtitle" scope="col"><button class="sort-btn" type="button">Focus Area <span class="sort-icon" aria-hidden="true">↕</span></button></th>
-              <th scope="col">Details</th>
-            </tr>
-          </thead>
+      <h2 class="stage-heading center">Start with where you are</h2>
+      <p class="rc-text center stage-sub">Choose your current stage of business.</p>
 
-          <tbody data-item data-num="01" data-title="GET STARTED" data-subtitle="Idea Validation &amp; Business Design" data-search="GET STARTED Idea Validation &amp; Business Design">
-            <tr class="row row--clickable">
-              <td class="cell-num">01</td>
-              <td class="cell-title">GET STARTED</td>
-              <td class="cell-sub">Idea Validation &amp; Business Design</td>
-              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-1" aria-label="Show details for Get Started">+</button></td>
-            </tr>
-            <tr class="details-row" id="svc-details-1" hidden>
-              <td colspan="4">
-                <p class="details__text">Turn promising ideas into viable businesses through research, validation, strategic planning, and structured execution.</p>
-                <ul class="details__list">
-                  <li>Market Research &amp; Analysis</li>
-                  <li>Business Model Design</li>
-                  <li>Go-to-Market Strategy</li>
-                  <li>Financial Projections</li>
-                  <li>Risk Assessment</li>
-                </ul>
-                <a href="contact.html" class="btn">Contact Us</a>
-              </td>
-            </tr>
-          </tbody>
-
-          <tbody data-item data-num="02" data-title="Strengthen your business" data-subtitle="Business Audit &amp; Performance Improvement" data-search="Strengthen your business Business Audit &amp; Performance Improvement">
-            <tr class="row row--clickable">
-              <td class="cell-num">02</td>
-              <td class="cell-title">Strengthen your business</td>
-              <td class="cell-sub">Business Audit &amp; Performance Improvement</td>
-              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-2" aria-label="Show details for Strengthen your business">+</button></td>
-            </tr>
-            <tr class="details-row" id="svc-details-2" hidden>
-              <td colspan="4">
-                <p class="details__text">Identify hidden gaps, improve performance, and overcome growth challenges with comprehensive business assessments and audits.</p>
-                <ul class="details__list">
-                  <li>Business Health Assessment</li>
-                  <li>Process Optimization</li>
-                  <li>Team &amp; Culture Audit</li>
-                  <li>Revenue Improvement</li>
-                  <li>Cost Reduction Strategy</li>
-                </ul>
-                <a href="contact.html" class="btn">Contact Us</a>
-              </td>
-            </tr>
-          </tbody>
-
-          <tbody data-item data-num="03" data-title="Build Systems to Scale" data-subtitle="Growth Strategy &amp; Systems Design" data-search="Build Systems to Scale Growth Strategy &amp; Systems Design">
-            <tr class="row row--clickable">
-              <td class="cell-num">03</td>
-              <td class="cell-title">Build Systems to Scale</td>
-              <td class="cell-sub">Growth Strategy &amp; Systems Design</td>
-              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-3" aria-label="Show details for Build Systems to Scale">+</button></td>
-            </tr>
-            <tr class="details-row" id="svc-details-3" hidden>
-              <td colspan="4">
-                <p class="details__text">Create scalable systems, empower your team, and prepare your business for its next stage of growth with structured frameworks.</p>
-                <ul class="details__list">
-                  <li>Scalability Framework</li>
-                  <li>Systems &amp; Process Design</li>
-                  <li>Team Scaling Strategy</li>
-                  <li>Technology Roadmap</li>
-                  <li>Partnership Strategy</li>
-                </ul>
-                <a href="contact.html" class="btn">Contact Us</a>
-              </td>
-            </tr>
-          </tbody>
-
-          <tbody data-item data-num="04" data-title="Lead with clarity" data-subtitle="Leadership &amp; Strategic Direction" data-search="Lead with clarity Leadership &amp; Strategic Direction">
-            <tr class="row row--clickable">
-              <td class="cell-num">04</td>
-              <td class="cell-title">Lead with clarity</td>
-              <td class="cell-sub">Leadership &amp; Strategic Direction</td>
-              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-4" aria-label="Show details for Lead with clarity">+</button></td>
-            </tr>
-            <tr class="details-row" id="svc-details-4" hidden>
-              <td colspan="4">
-                <p class="details__text">Develop stronger leadership, aligned teams, and clear strategic direction to make confident decisions and drive long-term success.</p>
-                <ul class="details__list">
-                  <li>Leadership Coaching</li>
-                  <li>Strategic Planning</li>
-                  <li>OKR &amp; Goal Setting</li>
-                  <li>Team Alignment</li>
-                  <li>Decision Frameworks</li>
-                </ul>
-                <a href="contact.html" class="btn">Contact Us</a>
-              </td>
-            </tr>
-          </tbody>
-
-          <tbody data-item data-num="05" data-title="Last-mile clarity" data-subtitle="Advisory &amp; Implementation Support" data-search="Last-mile clarity Advisory &amp; Implementation Support">
-            <tr class="row row--clickable">
-              <td class="cell-num">05</td>
-              <td class="cell-title">Last-mile clarity</td>
-              <td class="cell-sub">Advisory &amp; Implementation Support</td>
-              <td><button class="expand-btn" type="button" aria-expanded="false" aria-controls="svc-details-5" aria-label="Show details for Last-mile clarity">+</button></td>
-            </tr>
-            <tr class="details-row" id="svc-details-5" hidden>
-              <td colspan="4">
-                <p class="details__text">Ongoing advisory support and hands-on implementation assistance to ensure strategies translate into measurable business results.</p>
-                <ul class="details__list">
-                  <li>Monthly Advisory Sessions</li>
-                  <li>Implementation Support</li>
-                  <li>Progress Reviews</li>
-                  <li>Course Corrections</li>
-                  <li>Stakeholder Communication</li>
-                </ul>
-                <a href="contact.html" class="btn">Contact Us</a>
-              </td>
-            </tr>
-          </tbody>
-
-          <tfoot>
-            <tr class="empty-row" hidden><td colspan="4">No services match your search.</td></tr>
-          </tfoot>
-        </table>
+      <div class="stage-grid">
+        <a class="stage-card" href="#get-started">
+          <div class="stage-card__media"><img class="stage-card__img" src="assets/img/stage-idea.jpg" alt="" width="700" height="467" loading="lazy" style="object-position: 60% 20%"></div>
+          <h3 class="stage-card__title">I'm exploring an idea</h3>
+          <p class="stage-card__text">Validate and shape your idea before investing heavily.</p>
+        </a>
+        <a class="stage-card" href="#get-started">
+          <div class="stage-card__media"><img class="stage-card__img" src="assets/img/stage-building.jpg" alt="" width="700" height="467" loading="lazy" style="object-position: 42% 50%"></div>
+          <h3 class="stage-card__title">I'm building my business</h3>
+          <p class="stage-card__text">Create the strategy, model, and foundations needed to launch.</p>
+        </a>
+        <a class="stage-card" href="#strengthen">
+          <div class="stage-card__media"><img class="stage-card__img" src="assets/img/stage-strengthening.jpg" alt="" width="700" height="467" loading="lazy" style="object-position: 100% 50%"></div>
+          <h3 class="stage-card__title">I'm strengthening my business</h3>
+          <p class="stage-card__text">Identify gaps, improve performance, and solve operational challenges.</p>
+        </a>
+        <a class="stage-card" href="#scale">
+          <div class="stage-card__media"><img class="stage-card__img" src="assets/img/stage-scale.jpg" alt="" width="700" height="467" loading="lazy" style="object-position: 44% 50%"></div>
+          <h3 class="stage-card__title">I'm ready to scale</h3>
+          <p class="stage-card__text">Build systems, capabilities, and strategies for sustainable growth.</p>
+        </a>
       </div>
-      <p class="table-note">Click any row to expand details. Click column headers to sort.</p>
+
+      <div class="center">
+        <a href="#our-services" class="btn btn--deep btn--lg">Explore our services</a>
+      </div>
     </section>
 
-    <section class="section-navy">
-      <div class="container how">
+    <section class="section svc-list-section" id="our-services">
+      <h2 class="heading heading--deep heading--strong">Our Services</h2>
+
+      <article class="svc-block" id="get-started">
+        <div class="svc-block__head">
+          <p class="svc-block__num">#1</p>
+          <div>
+            <h3 class="svc-block__title">GET STARTED</h3>
+            <p class="svc-block__subtitle">From Idea to a Business Worth Building</p>
+          </div>
+          <img src="assets/img/service-get-started.jpg" alt="A founder thinking in front of a wall of sticky notes" width="430" height="172" loading="lazy">
+        </div>
+        <p class="rc-text svc-block__desc">Every promising idea needs more than enthusiasm. We help you understand its potential, test your assumptions, design the right business model, and create a practical path to market.</p>
+        <div class="split svc-block__body">
+          <h4 class="svc-label">Services</h4>
+          <div>
+            <ul class="svc-groups rc-text">
+              <li>Explore<ul><li>Idea Generation Workshops</li><li>Innovation Sprint</li></ul></li>
+              <li>Validate<ul><li>Idea Validation</li><li>Customer Validation</li><li>Market Research</li></ul></li>
+              <li>Design<ul><li>Business Model Design</li><li>Service Design</li><li>Business Planning</li></ul></li>
+              <li>Launch<ul><li>MVP &amp; Rapid Prototyping</li><li>Go-to-Market Strategy</li></ul></li>
+            </ul>
+            <p class="rc-text svc-block__closing">Not sure what's holding your business back?<br>Start with Business Health Assessment</p>
+            <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Get Started" data-topic="I'd like to talk about the Get Started services.">Contact us</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc-block" id="strengthen">
+        <div class="svc-block__head">
+          <p class="svc-block__num">#2</p>
+          <div>
+            <h3 class="svc-block__title">Strengthen Your Business</h3>
+            <p class="svc-block__subtitle">Understand What's Holding Your Business Back</p>
+          </div>
+          <img src="assets/img/service-strengthen.jpg" alt="Two shop owners holding an Open sign" width="430" height="173" loading="lazy">
+        </div>
+        <p class="rc-text svc-block__desc">As businesses evolve, gaps often emerge across sales, operations, people, production, brand, and customer experience. We help you identify what's working, what's not, and where to focus next.</p>
+        <div class="split svc-block__body">
+          <div>
+            <h4 class="svc-label">Services</h4>
+            <div class="featured">
+              <p class="featured__tag">Featured Services</p>
+              <p class="featured__title">Business Health Assessment</p>
+              <p class="rc-text">A structured assessment of your business to identify critical gaps, opportunities, risks, and priorities across key business functions.</p>
+            </div>
+          </div>
+          <div>
+            <ul class="svc-groups rc-text">
+              <li>Sales<ul><li>Sales System audit</li></ul></li>
+              <li>Operations<ul><li>Operations audit</li></ul></li>
+              <li>Production<ul><li>Production audit</li><li>Production Capacity audit</li></ul></li>
+              <li>Supply chain<ul><li>Supply chain audit</li></ul></li>
+              <li>Brand &amp; Customer<ul><li>Brand audit</li><li>Service quality audit</li></ul></li>
+              <li>People &amp; Capability<ul><li>Training system audit</li></ul></li>
+              <li>Sustainability<ul><li>Business Sustainability audit</li></ul></li>
+            </ul>
+            <p class="rc-text svc-block__closing">Not sure what's holding your business back?<br>Start with Business Health Assessment</p>
+            <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Assess My Business" data-topic="I'd like a Business Health Assessment.">Assess My Business</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc-block" id="scale">
+        <div class="svc-block__head">
+          <p class="svc-block__num">#3</p>
+          <div>
+            <h3 class="svc-block__title">Build Systems to Scale</h3>
+            <p class="svc-block__subtitle">A business that doesn't need you all the time</p>
+          </div>
+          <img src="assets/img/service-scale.jpg" alt="Planning documents and charts spread on a desk" width="430" height="176" loading="lazy">
+        </div>
+        <p class="rc-text svc-block__desc">Growth creates complexity. We help businesses convert informal ways of working into structured processes, systems, and organizational capabilities that can support the next stage of growth.</p>
+        <div class="split svc-block__body">
+          <h4 class="svc-label">Services</h4>
+          <div>
+            <ul class="svc-groups rc-text">
+              <li>Organization<ul><li>Organization Design</li><li>Department Design</li></ul></li>
+              <li>Processes &amp; Operations<ul><li>Business Process Design</li><li>SOP Development</li><li>Internal Systems</li></ul></li>
+              <li>Information &amp; Technology<ul><li>Information Architecture</li><li>Data Management Systems</li><li>Digital Transformation</li></ul></li>
+              <li>Growth &amp; Innovation<ul><li>Innovation Management</li><li>Scalability Planning</li></ul></li>
+            </ul>
+            <p class="rc-text svc-block__closing">Build a business that can operate consistently, adapt quickly, and grow without everything depending on the founder.</p>
+            <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Explore Scaling Solutions" data-topic="I'd like to talk about building systems to scale.">Explore Scaling Solutions</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="svc-block" id="lead">
+        <div class="svc-block__head">
+          <p class="svc-block__num">#4</p>
+          <div>
+            <h3 class="svc-block__title">Lead with clarity</h3>
+            <p class="svc-block__subtitle">Align your thinking.<br>Align your people.<br>Move your business forward.</p>
+          </div>
+          <img src="assets/img/service-lead.jpg" alt="A smiling leader with his team" width="430" height="172" loading="lazy">
+        </div>
+        <p class="rc-text svc-block__desc">A growing business needs more than good systems. It needs founders and teams who can make informed decisions, align around a common direction, and lead change effectively.</p>
+        <div class="split svc-block__body">
+          <h4 class="svc-label">Services</h4>
+          <div>
+            <ul class="svc-groups rc-text">
+              <li>Founder<ul><li>Founder Mindset Assessment</li><li>Executive Coaching</li></ul></li>
+              <li>People &amp; Culture<ul><li>People System Audit</li><li>Business Culture Audit</li><li>Team Alignment</li></ul></li>
+              <li>Strategy &amp; Direction<ul><li>Strategic Planning</li><li>Innovation Roadmap</li></ul></li>
+              <li>Capability &amp; Advisory<ul><li>Leadership Workshops</li><li>Innovation Workshops</li><li>Ongoing Business Advisory</li></ul></li>
+            </ul>
+            <p class="rc-text svc-block__closing">Build stronger leadership, align your people, and create a clear direction for your business's next stage of growth.</p>
+            <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Explore Leadership Solutions" data-topic="I'd like to talk about leadership and strategic direction.">Explore Leadership Solutions</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section how">
+      <h2 class="how__heading">HOW WE WORK</h2>
+      <ol class="steps">
+        <li class="step">
+          <div class="step__top">
+            <svg viewBox="0 0 95 96" aria-hidden="true" fill="none" stroke="#e65400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M87.4 33.3A43 43 0 1 1 74.6 15.1"/><path d="M27 46l15 15 42-42"/></svg>
+            <h3 class="step__title">Understand</h3>
+          </div>
+          <p class="rc-text">Your business, context, customers, ambitions, and challenges.</p>
+        </li>
+        <li class="step">
+          <div class="step__top">
+            <svg viewBox="0 0 95 96" aria-hidden="true" fill="none" stroke="#e65400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M87.4 33.3A43 43 0 1 1 74.6 15.1"/><path d="M27 46l15 15 42-42"/></svg>
+            <h3 class="step__title">Diagnose</h3>
+          </div>
+          <p class="rc-text">Identify the underlying problems and opportunities.</p>
+        </li>
+        <li class="step">
+          <div class="step__top">
+            <svg viewBox="0 0 95 96" aria-hidden="true" fill="none" stroke="#e65400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M87.4 33.3A43 43 0 1 1 74.6 15.1"/><path d="M27 46l15 15 42-42"/></svg>
+            <h3 class="step__title">Validate</h3>
+          </div>
+          <p class="rc-text">Develop the right strategy, system, model, or solution.</p>
+        </li>
+        <li class="step">
+          <div class="step__top">
+            <svg viewBox="0 0 95 96" aria-hidden="true" fill="none" stroke="#e65400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M87.4 33.3A43 43 0 1 1 74.6 15.1"/><path d="M27 46l15 15 42-42"/></svg>
+            <h3 class="step__title">Execute</h3>
+          </div>
+          <p class="rc-text">Translate recommendations into practical action.</p>
+        </li>
+        <li class="step">
+          <div class="step__top">
+            <svg viewBox="0 0 95 96" aria-hidden="true" fill="none" stroke="#e65400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M87.4 33.3A43 43 0 1 1 74.6 15.1"/><path d="M27 46l15 15 42-42"/></svg>
+            <h3 class="step__title">Evolve</h3>
+          </div>
+          <p class="rc-text">Measure, learn, improve, and prepare for what's next.</p>
+        </li>
+      </ol>
+      <div class="center">
+        <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Let's get started">Let's get started</a>
+      </div>
+
+      <div class="no-two">
         <div>
-          <h2 class="how__title">How we work with you</h2>
-          <div class="step">
-            <h3 class="step__title">#1 Understand your context</h3>
-            <p class="step__text">We start by deeply understanding your business, challenges, and goals before recommending anything.</p>
-          </div>
-          <div class="step">
-            <h3 class="step__title">#2 Co-create the strategy</h3>
-            <p class="step__text">Your strategy is built with you, not for you — so it fits your reality and your team's capabilities.</p>
-          </div>
-          <div class="step">
-            <h3 class="step__title">#3 Have a strategy — make it real</h3>
-            <p class="step__text">We help translate strategy into action with clear plans, priorities, and accountability systems.</p>
-          </div>
-          <div class="step">
-            <h3 class="step__title">#4 Frequently asked questions</h3>
-            <p class="step__text">Ongoing support ensures the strategy evolves as your business grows and markets shift.</p>
+          <h2 class="no-two__heading">NO TWO BUSINESSES<br>NEED THE SAME SOLUTION</h2>
+          <p class="rc-text">We don't believe in applying standard solutions to unique business challenges. Our approach adapts to your business stage, context, resources, ambitions, and challenges—bringing together the expertise needed for the problem at hand.</p>
+          <div class="no-two__cta">
+            <p class="rc-text">Let's talk about what your business specifically needs</p>
+            <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Let's talk about your business">Contact us</a>
           </div>
         </div>
-        <div class="how__media">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&amp;h=600&amp;fit=crop&amp;auto=format" alt="How we work" width="800" height="600" loading="lazy">
-        </div>
+        <img src="assets/img/no-two-businesses.jpg" alt="Wooden blocks of different shapes, each labelled as a tailored solution" width="448" height="382" loading="lazy">
       </div>
+    </section>
+
+    <section class="section engage">
+      <p class="engage__kicker">ENGAGEMENT MODELS</p>
+      <h2 class="engage__title">How you can work with us</h2>
+
+      <ol class="timeline">
+        <li>Focused<br>Intervention</li>
+        <li>Strategic<br>Engagement</li>
+        <li>Build &amp;<br>Implement</li>
+        <li>Ongoing<br>Advisory</li>
+      </ol>
+
+      <div class="engage-rows">
+        <article class="split engage-row">
+          <div>
+            <p class="engage-row__num">#1</p>
+            <p class="engage-row__label">FOCUSED INTERVENTION</p>
+            <h3 class="engage-row__title">Solve a specific challenge</h3>
+          </div>
+          <div class="engage-card">
+            <p>For a defined business problem where you need focused expertise, diagnosis, or intervention.</p>
+            <p><strong>Examples:</strong> Idea Validation, Sales Audit, Business Health Assessment</p>
+            <p><strong class="best-for">Best for:</strong> <em>“I have a specific problem I need help with.”</em></p>
+          </div>
+        </article>
+        <article class="split engage-row">
+          <div>
+            <p class="engage-row__num">#2</p>
+            <p class="engage-row__label">STRATEGIC ENGAGEMENT</p>
+            <h3 class="engage-row__title">Design the way forward</h3>
+          </div>
+          <div class="engage-card">
+            <p>For complex business challenges that require research, strategic thinking, and structured planning.</p>
+            <p><strong>Examples:</strong> Business Model Design, GTM Strategy, Organization Design</p>
+            <p><strong class="best-for">Best for:</strong> <em>“I need clarity on what we should do next.”</em></p>
+          </div>
+        </article>
+        <article class="split engage-row">
+          <div>
+            <p class="engage-row__num">#3</p>
+            <p class="engage-row__label">BUILD &amp; IMPLEMENT</p>
+            <h3 class="engage-row__title">Turn strategy into reality</h3>
+          </div>
+          <div class="engage-card">
+            <p>For businesses that need hands-on support translating strategy into processes, systems, and operational capabilities.</p>
+            <p><strong>Examples:</strong> Process Design, SOP Development, Internal Systems, Digital Transformation</p>
+            <p><strong class="best-for">Best for:</strong> <em>“We know what needs to change. Help us make it happen.”</em></p>
+          </div>
+        </article>
+        <article class="split engage-row">
+          <div>
+            <p class="engage-row__num">#4</p>
+            <p class="engage-row__label">ONGOING ADVISORY</p>
+            <h3 class="engage-row__title">Have a strategic partner by your side</h3>
+          </div>
+          <div class="engage-card">
+            <p>For founders who want continued access to strategic thinking, business expertise, and an external perspective as their business evolves.</p>
+            <p><strong>Examples:</strong> Strategic Advisory, Business Reviews, Growth Decisions, Ongoing Problem Solving</p>
+            <p><strong class="best-for">Best for:</strong> <em>“I want someone I can turn to as the business evolves.”</em></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section help">
+      <h2 class="help__heading">Not Sure Where You Need Help?</h2>
+      <p class="rc-text">You don't need to know which service you need. Tell us about your business, where you are today, and what you're trying to achieve. We'll help you identify the right starting point</p>
+      <a href="contact.html#stay-connected" class="btn btn--deep btn--lg" data-popup="Book a discovery conversation">Book a discovery conversation</a>
+    </section>
+
+    <section class="section faq">
+      <h2 class="faq__heading">Frequently Asked Questions</h2>
+      <div class="faq__list">
+        <details class="faq-item">
+          <summary>Do I need to know exactly what service I need?<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 2v24M2 14h24" stroke="#1c1a1f" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-item__answer">No. Tell us about your business, where you are today, and what you're trying to achieve. We'll help you identify the right starting point.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can you work with an idea that hasn't become a business yet?<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 2v24M2 14h24" stroke="#1c1a1f" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-item__answer">Yes. Our Get Started services help you test your assumptions, understand your market, design the right business model, and create a practical path to market before you invest heavily.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you work with small businesses and MSMEs?<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 2v24M2 14h24" stroke="#1c1a1f" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-item__answer">Yes. We work with entrepreneurs, startups, and MSMEs at every stage, from validating an idea to preparing to scale.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you only provide recommendations, or help with implementation too?<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 2v24M2 14h24" stroke="#1c1a1f" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-item__answer">Both. Through our Build &amp; Implement engagement we provide hands-on support translating strategy into processes, systems, and operational capabilities.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do you determine what a business actually needs?<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 2v24M2 14h24" stroke="#1c1a1f" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-item__answer">We start by understanding your business, context, customers, ambitions, and challenges, then diagnose the underlying problems and opportunities before recommending anything.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does an engagement typically take?<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 2v24M2 14h24" stroke="#1c1a1f" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-item__answer">It depends on the engagement model. A focused intervention is shorter than a strategic engagement or ongoing advisory. We agree on a timeline with you once we understand what you need.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can we continue working with you after a project is completed?<svg viewBox="0 0 28 28" aria-hidden="true"><path d="M14 2v24M2 14h24" stroke="#1c1a1f" stroke-width="2" stroke-linecap="round"/></svg></summary>
+          <p class="faq-item__answer">Yes. Our Ongoing Advisory engagement gives you continued access to strategic thinking, business expertise, and an external perspective as your business evolves.</p>
+        </details>
+      </div>
+      <p class="faq__more">Need more information? <a href="contact.html#stay-connected" data-popup="Schedule a call">Schedule a call</a> →</p>
     </section>
 
     <div class="banner">
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&amp;h=500&amp;fit=crop&amp;auto=format" alt="Business meeting" width="1400" height="500" loading="lazy">
+      <img src="assets/img/banner-meeting.jpg" alt="The Extion team in a meeting" width="1351" height="580" loading="lazy">
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div>
-        <a href="index.html" class="logo" aria-label="Extion Consulting — home">
-          <span>Extion<br><span class="logo__accent">Consulting</span></span>
-        </a>
-        <a href="contact.html" class="btn-outline">Get in touch</a>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Extion Consulting — home" width="179" height="61" loading="lazy"></a>
+        <a href="contact.html#stay-connected" class="btn-outline" data-popup="Get in touch">Get in touch</a>
       </div>
-      <div>
+      <div class="footer-col">
         <p class="footer-text">+91-98 XXXX XXXX<br><a href="mailto:info@extionconsulting.com">info@extionconsulting.com</a></p>
         <a href="#" class="footer-link">Privacy Policy</a>
       </div>
-      <div>
+      <div class="footer-col">
         <address class="footer-text">Head Office:<br>ABC, Sonipat,<br>Haryana - 131001</address>
         <a href="#" class="footer-link">Accessibility Statement</a>
       </div>
-      <div>
-        <p class="footer-text">All rights reserved<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extion Consulting</p>
-        <span class="copyright-mark" role="img" aria-label="Copyright">C</span>
+      <div class="footer-col">
+        <p class="footer-text">All rights reserved<br>© Extion Consulting</p>
       </div>
     </div>
   </footer>

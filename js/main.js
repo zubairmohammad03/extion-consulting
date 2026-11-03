@@ -1,5 +1,11 @@
 /* Extion Consulting — site interactions */
 
+// Where enquiries are sent. Leave empty to only show the thank-you message,
+// or paste a form service URL (e.g. https://formspree.io/f/xxxx) to receive them.
+const FORM_ENDPOINT = "";
+
+const ARROW_ICON = `<svg class="btn__icon" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#fff"/><path d="M8.5 15h12M15.5 10l5 5-5 5" fill="none" stroke="#ff6b15" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
 // Mobile menu ---------------------------------------------------------------
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileNav = document.getElementById("mobile-nav");
@@ -13,165 +19,21 @@ if (menuToggle && mobileNav) {
   });
 }
 
-// Expandable service cards (home page) --------------------------------------
-document.querySelectorAll(".svc-card").forEach((card) => {
-  const button = card.querySelector(".svc-card__head");
-  const panel = card.querySelector(".svc-card__desc");
-  const icon = card.querySelector(".svc-card__icon");
-
-  // The whole card is clickable; the button inside keeps it keyboard-accessible.
-  card.addEventListener("click", () => {
-    const open = button.getAttribute("aria-expanded") === "true";
-    button.setAttribute("aria-expanded", String(!open));
-    panel.hidden = open;
-    icon.textContent = open ? "+" : "−";
-  });
-});
-
-// Filter chips --------------------------------------------------------------
-// Calls onChange with the selected chip's value whenever the selection changes.
-function initChips(group, onChange) {
-  const chips = [...group.querySelectorAll(".chip")];
-  chips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
-      onChange(chip.dataset.value);
-    });
-  });
-}
-
-// Sortable / filterable tables (services + experts) ------------------------
-// Each [data-item] element is one sortable unit: a <tr>, or a <tbody> that
-// groups a row with its expandable details row.
-function initDataTable(table) {
-  const items = [...table.querySelectorAll("[data-item]")];
-  if (!items.length) return;
-
-  const container = items[0].parentNode;
-  const headers = [...table.querySelectorAll("th[data-sort]")];
-  const emptyRow = table.querySelector(".empty-row");
-  const search = document.querySelector(`[data-search-for="${table.id}"]`);
-  const chips = document.querySelector(`[data-chips-for="${table.id}"]`);
-  const count = document.querySelector(`[data-count-for="${table.id}"]`);
-
-  const state = {
-    key: table.dataset.defaultSort,
-    dir: "asc",
-    query: "",
-    category: "All",
-  };
-
-  const rowOf = (item) => (item.matches(".row") ? item : item.querySelector(".row"));
-
-  function compare(a, b) {
-    const header = headers.find((h) => h.dataset.sort === state.key);
-    const x = a.dataset[state.key];
-    const y = b.dataset[state.key];
-    const result = header?.dataset.type === "number" ? Number(x) - Number(y) : x.localeCompare(y);
-    return state.dir === "asc" ? result : -result;
-  }
-
-  function render() {
-    let visible = 0;
-    items
-      .slice()
-      .sort(compare)
-      .forEach((item) => {
-        const matches =
-          (state.category === "All" || item.dataset.category === state.category) &&
-          (!state.query || item.dataset.search.toLowerCase().includes(state.query));
-        item.hidden = !matches;
-        if (matches) rowOf(item).classList.toggle("is-alt", visible++ % 2 === 1);
-        container.appendChild(item);
-      });
-
-    headers.forEach((h) => {
-      const active = h.dataset.sort === state.key;
-      h.setAttribute("aria-sort", active ? (state.dir === "asc" ? "ascending" : "descending") : "none");
-      h.querySelector(".sort-icon").textContent = active ? (state.dir === "asc" ? "↑" : "↓") : "↕";
-    });
-
-    if (emptyRow) emptyRow.hidden = visible > 0;
-    if (count) count.textContent = `${visible} ${visible === 1 ? "expert" : "experts"} shown.`;
-  }
-
-  headers.forEach((h) => {
-    h.querySelector(".sort-btn").addEventListener("click", () => {
-      if (state.key === h.dataset.sort) {
-        state.dir = state.dir === "asc" ? "desc" : "asc";
-      } else {
-        state.key = h.dataset.sort;
-        state.dir = "asc";
-      }
-      render();
-    });
-  });
-
-  search?.addEventListener("input", () => {
-    state.query = search.value.trim().toLowerCase();
-    render();
-  });
-
-  if (chips) {
-    initChips(chips, (value) => {
-      state.category = value;
-      render();
-    });
-  }
-
-  // Expandable rows: only one open at a time.
-  const expandRows = [...table.querySelectorAll(".row--clickable")];
-
-  function setOpen(row, open) {
-    const button = row.querySelector(".expand-btn");
-    button.setAttribute("aria-expanded", String(open));
-    button.textContent = open ? "−" : "+";
-    document.getElementById(button.getAttribute("aria-controls")).hidden = !open;
-  }
-
-  expandRows.forEach((row) => {
-    row.addEventListener("click", () => {
-      const open = row.querySelector(".expand-btn").getAttribute("aria-expanded") === "true";
-      expandRows.forEach((r) => setOpen(r, false));
-      if (!open) setOpen(row, true);
-    });
-  });
-
-  render();
-}
-
-document.querySelectorAll(".data-table").forEach(initDataTable);
-
-// Resource filters ----------------------------------------------------------
-const resourceChips = document.querySelector("[data-chips-for='resources']");
-
-if (resourceChips) {
-  const cards = [...document.querySelectorAll(".res-card")];
-  initChips(resourceChips, (value) => {
-    cards.forEach((card) => {
-      card.hidden = value !== "All" && card.dataset.category !== value;
-    });
-  });
-}
-
-// Contact form --------------------------------------------------------------
-// Without a data-endpoint the form just shows the thank-you message. Set
-// data-endpoint on the <form> (e.g. a Formspree or Netlify URL) to send it.
-document.querySelectorAll(".contact-form").forEach((form) => {
-  const card = form.parentElement;
-  const success = card.querySelector(".form-success");
-  const error = form.querySelector(".form-error");
+// Forms ---------------------------------------------------------------------
+// Sends the form (when FORM_ENDPOINT is set) and swaps it for a thank-you note.
+function initForm(form, onDone) {
+  const error = form.querySelector(".form-note");
   const submit = form.querySelector("button[type='submit']");
+  const done = form.parentElement.querySelector(".form-done");
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     error.hidden = true;
 
-    const endpoint = form.dataset.endpoint;
-    if (endpoint) {
+    if (FORM_ENDPOINT) {
       submit.disabled = true;
       try {
-        const response = await fetch(endpoint, {
+        const response = await fetch(FORM_ENDPOINT, {
           method: "POST",
           body: new FormData(form),
           headers: { Accept: "application/json" },
@@ -187,12 +49,144 @@ document.querySelectorAll(".contact-form").forEach((form) => {
 
     form.reset();
     form.hidden = true;
-    success.hidden = false;
+    done.hidden = false;
+    done.querySelector("button").focus();
   });
 
-  success.querySelector(".form-success__again").addEventListener("click", () => {
-    success.hidden = true;
+  done.querySelector("button").addEventListener("click", () => {
+    done.hidden = true;
     form.hidden = false;
-    form.querySelector("input")?.focus();
+    onDone?.();
   });
+}
+
+document.querySelectorAll(".form-card .contact-form").forEach((form) => {
+  initForm(form, () => form.querySelector("input")?.focus());
 });
+
+// Pop-up form ------------------------------------------------------------------
+// Any element with data-popup opens it. data-popup is the pop-up heading;
+// data-topic (optional) pre-fills "What would you like to discuss?".
+const popup = document.createElement("dialog");
+popup.className = "popup";
+popup.setAttribute("aria-labelledby", "popup-title");
+popup.innerHTML = `
+  <div class="popup__inner">
+    <button class="popup__close" type="button" aria-label="Close">
+      <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <p class="popup__eyebrow"></p>
+    <h2 class="popup__title" id="popup-title">Let's talk about your business</h2>
+    <p class="popup__text">Share a few details and we'll get back to you shortly.</p>
+    <form class="contact-form">
+      <input type="hidden" name="enquiry">
+      <div class="field">
+        <label for="pf-name">Name*</label>
+        <input id="pf-name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="pf-email">Email id*</label>
+        <input id="pf-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="pf-phone">Phone no*</label>
+        <input id="pf-phone" name="phone" type="tel" placeholder="+91- XXXXXXXXXX" autocomplete="tel" required>
+      </div>
+      <div class="field">
+        <label for="pf-company">Company name*</label>
+        <input id="pf-company" name="company" type="text" placeholder="Enter your company name" autocomplete="organization" required>
+      </div>
+      <div class="field">
+        <label for="pf-position">Position*</label>
+        <input id="pf-position" name="position" type="text" placeholder="Enter your position or title" autocomplete="organization-title" required>
+      </div>
+      <div class="field">
+        <label for="pf-topic">What would you like to discuss?*</label>
+        <textarea id="pf-topic" name="topic" rows="2" placeholder="E.g. Current challenges, Future roadmap, Growth planning etc." required></textarea>
+      </div>
+      <button type="submit" class="btn btn--block">${ARROW_ICON}<span class="btn__label">SUBMIT</span></button>
+      <p class="form-note" role="alert" hidden>Sorry, something went wrong. Please try again or email us directly.</p>
+    </form>
+    <div class="form-done" role="status" hidden>
+      <div class="form-done__icon" aria-hidden="true">✓</div>
+      <p class="form-done__title">Thank you!</p>
+      <p class="form-done__text">We'll be in touch shortly.</p>
+      <button class="text-link" type="button">Close</button>
+    </div>
+  </div>`;
+document.body.appendChild(popup);
+
+const popupForm = popup.querySelector("form");
+const popupTopic = popup.querySelector("#pf-topic");
+let lastTrigger = null;
+
+function openPopup(trigger) {
+  const label = trigger.dataset.popup || trigger.textContent.trim();
+  popup.querySelector(".popup__eyebrow").textContent = label;
+  popupForm.elements.enquiry.value = `${label} (${document.title})`;
+  if (trigger.dataset.topic && !popupTopic.value) popupTopic.value = trigger.dataset.topic;
+
+  lastTrigger = trigger;
+  popup.showModal();
+  document.body.classList.add("popup-open");
+  popup.querySelector("#pf-name").focus();
+}
+
+function closePopup() {
+  popup.close();
+}
+
+popup.addEventListener("close", () => {
+  document.body.classList.remove("popup-open");
+  lastTrigger?.focus();
+});
+
+popup.querySelector(".popup__close").addEventListener("click", closePopup);
+
+// Clicking the dimmed backdrop (outside the dialog box) closes it.
+popup.addEventListener("click", (event) => {
+  if (event.target === popup) closePopup();
+});
+
+initForm(popupForm, closePopup);
+
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-popup]");
+  if (!trigger) return;
+  event.preventDefault();
+  openPopup(trigger);
+});
+
+// Resource search (Resources page) ------------------------------------------
+const search = document.getElementById("resource-search");
+
+if (search) {
+  const results = document.getElementById("search-results");
+  const items = [...document.querySelectorAll("[data-resource]")].map((card) => ({
+    title: card.dataset.resource,
+    tag: card.dataset.tag || "",
+    href: `#${card.id}`,
+    img: card.querySelector("img")?.getAttribute("src") || "",
+    text: card.textContent.toLowerCase(),
+  }));
+
+  const escape = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+  search.addEventListener("input", () => {
+    const query = search.value.trim().toLowerCase();
+    if (!query) {
+      results.hidden = true;
+      results.innerHTML = "";
+      return;
+    }
+    const matches = items.filter((item) => item.text.includes(query));
+    results.innerHTML = matches.length
+      ? matches
+          .map(
+            (m) => `<li><a href="${escape(m.href)}"><img src="${escape(m.img)}" alt=""><span class="search-results__title">${escape(m.title)}</span><span class="search-results__tag">${escape(m.tag)}</span></a></li>`
+          )
+          .join("")
+      : `<li class="search-results__empty">No resources match “${escape(search.value.trim())}”.</li>`;
+    results.hidden = false;
+  });
+}

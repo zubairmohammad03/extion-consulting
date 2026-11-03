@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big&family=Radio+Canada:wght@400;500;600;700&family=Roboto:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Radio+Canada+Big&family=Radio+Canada:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -17,9 +17,7 @@
 
   <header class="site-header">
     <div class="site-header__inner">
-      <a href="index.html" class="logo" aria-label="Extion Consulting — home">
-        <span>Extion<br><span class="logo__accent">Consulting</span></span>
-      </a>
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Extion Consulting — home" width="179" height="61"></a>
       <nav class="main-nav" aria-label="Main">
         <a href="index.html" aria-current="page">HOME</a>
         <a href="services.html">SERVICES</a>
@@ -27,9 +25,7 @@
         <a href="resources.html">RESOURCES</a>
         <a href="contact.html">CONTACT</a>
       </nav>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Main" hidden>
       <a href="index.html" aria-current="page">HOME</a>
@@ -41,226 +37,245 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&amp;h=700&amp;fit=crop&amp;auto=format" alt="Business consulting" width="1400" height="700" fetchpriority="high">
+    <section class="hero hero--home">
+      <div class="hero__media"><img src="assets/img/home-hero.jpg" alt="Two consultants in conversation over a tablet" width="1655" height="950" fetchpriority="high"></div>
       <div class="hero__card">
         <h1 class="hero__title">Build your business with clarity, structure and confidence</h1>
-        <p class="hero__text">From ideas to scalable systems to ensure sustainable growth — through design, strategy, and execution</p>
-        <a href="contact.html" class="btn">Book a free consultation</a>
-      </div>
-    </section>
-
-    <section class="container audience">
-      <p class="kicker">Who we help</p>
-      <h2 class="audience__title">Where are you in your business journey?</h2>
-      <p class="audience__lead">Whether you're validating an idea, overcoming growth challenges, or preparing to scale, our consulting services are designed to meet you where you are.</p>
-      <div class="audience-grid">
-        <article class="audience-card">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&amp;h=300&amp;fit=crop&amp;auto=format" alt="I'm exploring an idea" width="400" height="300" loading="lazy">
-          <div class="audience-card__body">
-            <h3 class="audience-card__title">I'm exploring an idea</h3>
-            <p class="audience-card__text">Validate your idea, understand your market, and build a strong foundation before you invest time and resources.</p>
-          </div>
-        </article>
-        <article class="audience-card">
-          <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&amp;h=300&amp;fit=crop&amp;auto=format" alt="I'm building my business" width="400" height="300" loading="lazy">
-          <div class="audience-card__body">
-            <h3 class="audience-card__title">I'm building my business</h3>
-            <p class="audience-card__text">Lay the right foundations with a clear strategy, business model, and go-to-market approach.</p>
-          </div>
-        </article>
-        <article class="audience-card">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&amp;h=300&amp;fit=crop&amp;auto=format" alt="I'm strengthening my business" width="400" height="300" loading="lazy">
-          <div class="audience-card__body">
-            <h3 class="audience-card__title">I'm strengthening my business</h3>
-            <p class="audience-card__text">Optimize your business by fixing operational gaps, improving processes, and strengthening performance.</p>
-          </div>
-        </article>
-        <article class="audience-card">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&amp;h=300&amp;fit=crop&amp;auto=format" alt="I'm ready to scale" width="400" height="300" loading="lazy">
-          <div class="audience-card__body">
-            <h3 class="audience-card__title">I'm ready to scale</h3>
-            <p class="audience-card__text">Create scalable systems, empower your team, and prepare your business for its next stage of growth.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="container about-intro">
-      <div class="about-intro__main">
-        <p class="kicker kicker--sm">About Us</p>
-        <h2 class="about-intro__title">Built for every stage of business</h2>
-        <p class="about-intro__text">We are a Business Design &amp; Growth Consultancy helping entrepreneurs, startups, and MSMEs build scalable businesses through innovation, strategy, operational systems, and execution.</p>
-        <a href="about.html" class="text-link">We started when...</a>
-      </div>
-      <div class="purpose-card">
-        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&amp;h=400&amp;fit=crop&amp;auto=format" alt="Our purpose" width="600" height="400" loading="lazy">
-        <div class="purpose-card__body">
-          <h3 class="purpose-card__title">Our Purpose</h3>
-          <p class="purpose-card__text">We want to help founders make informed decisions, build stronger foundations, and create businesses that are capable of growing sustainably.</p>
+        <div class="hero__row">
+          <p class="hero__sub">From ideas to scalable systems to ensure sustainable growth — through design, strategy, and execution</p>
+          <a href="contact.html#stay-connected" class="btn" data-popup="Book a free consultation">Book a free consultation</a>
         </div>
       </div>
     </section>
 
-    <section class="section-navy">
-      <div class="container services-preview">
-        <div class="services-preview__intro">
-          <h2 class="services-preview__title">Our Services</h2>
-          <p class="services-preview__text">Every business journey is unique. Our consulting services are thoughtfully designed to address the specific challenges at each stage of growth.</p>
-          <a href="services.html" class="btn">EXPLORE SERVICES →</a>
+    <section class="section who">
+      <div class="split">
+        <div>
+          <p class="kicker">Who we help</p>
+          <h2 class="display">Where are you in your business journey?</h2>
         </div>
-        <div class="svc-cards">
-          <div class="svc-card">
-            <button class="svc-card__head" type="button" aria-expanded="false" aria-controls="svc-desc-1">
-              <span class="svc-card__title">Get Started</span>
-              <span class="svc-card__icon" aria-hidden="true">+</span>
-            </button>
-            <p class="svc-card__desc" id="svc-desc-1" hidden>Turn promising ideas into viable businesses through research, validation, strategic planning, and structured execution that reduces uncertainty and builds confidence.</p>
-          </div>
-          <div class="svc-card">
-            <button class="svc-card__head" type="button" aria-expanded="false" aria-controls="svc-desc-2">
-              <span class="svc-card__title">Strengthen your business</span>
-              <span class="svc-card__icon" aria-hidden="true">+</span>
-            </button>
-            <p class="svc-card__desc" id="svc-desc-2" hidden>Identify hidden gaps, improve performance, and overcome growth challenges with comprehensive business assessments, audits, and targeted strategic improvements.</p>
-          </div>
-          <div class="svc-card">
-            <button class="svc-card__head" type="button" aria-expanded="false" aria-controls="svc-desc-3">
-              <span class="svc-card__title">Build systems to scale</span>
-              <span class="svc-card__icon" aria-hidden="true">+</span>
-            </button>
-            <p class="svc-card__desc" id="svc-desc-3" hidden>Create scalable systems, empower your team, and prepare your business for its next stage of growth with structured frameworks.</p>
-          </div>
-          <div class="svc-card">
-            <button class="svc-card__head" type="button" aria-expanded="false" aria-controls="svc-desc-4">
-              <span class="svc-card__title">Lead with clarity</span>
-              <span class="svc-card__icon" aria-hidden="true">+</span>
-            </button>
-            <p class="svc-card__desc" id="svc-desc-4" hidden>Develop stronger leadership, aligned teams, and clear strategic direction to make confident decisions, foster innovation, and drive long-term business success.</p>
-          </div>
-        </div>
+        <p class="lead who__lead">Whether you're validating an idea, overcoming growth challenges, or preparing to scale, our consulting services are designed to meet you where you are—and help you move forward with confidence.</p>
+      </div>
+
+      <div class="stage-grid">
+        <a class="stage-card" href="services.html#get-started">
+          <div class="stage-card__media"><img class="stage-card__img" src="assets/img/stage-idea.jpg" alt="" width="700" height="467" loading="lazy" style="object-position: 60% 20%"></div>
+          <h3 class="stage-card__title">I'm exploring an idea</h3>
+          <p class="stage-card__text">Validate your idea, understand your market, and build a strong foundation before you invest time and resources.</p>
+        </a>
+        <a class="stage-card" href="services.html#get-started">
+          <div class="stage-card__media"><img class="stage-card__img" src="assets/img/stage-building.jpg" alt="" width="700" height="467" loading="lazy" style="object-position: 42% 50%"></div>
+          <h3 class="stage-card__title">I'm building my business</h3>
+          <p class="stage-card__text">Lay the right foundations with a clear strategy, business model, and go-to-market approach.</p>
+        </a>
+        <a class="stage-card" href="services.html#strengthen">
+          <div class="stage-card__media"><img class="stage-card__img" src="assets/img/stage-strengthening.jpg" alt="" width="700" height="467" loading="lazy" style="object-position: 100% 50%"></div>
+          <h3 class="stage-card__title">I'm strengthening my business</h3>
+          <p class="stage-card__text">Optimize your business by fixing operational gaps, improving processes, and strengthening performance.</p>
+        </a>
+        <a class="stage-card" href="services.html#scale">
+          <div class="stage-card__media"><img class="stage-card__img" src="assets/img/stage-scale.jpg" alt="" width="700" height="467" loading="lazy" style="object-position: 44% 50%"></div>
+          <h3 class="stage-card__title">I'm ready to scale</h3>
+          <p class="stage-card__text">Create scalable systems, empower your team, and prepare your business for its next stage of growth.</p>
+        </a>
+      </div>
+
+      <div class="cta-line">
+        <p class="lead">Not clear where you stand?</p>
+        <a href="contact.html#stay-connected" class="btn btn--md" data-popup="Not clear where you stand?">Contact us</a>
       </div>
     </section>
 
-    <section class="approach">
-      <div class="container approach__inner">
-        <h2 class="approach__title">Every business is unique. So every solution should be too.</h2>
-        <div class="approach__body">
-          <p class="approach__lead">We believe successful businesses aren't built by templates or one-size-fits-all advice. Our approach combines strategic thinking with hands-on execution.</p>
-          <div class="principle">
-            <h3 class="principle__title">Context Before Frameworks</h3>
-            <p class="principle__text">We begin by understanding your business before applying any model or methodology.</p>
-          </div>
-          <div class="principle">
-            <h3 class="principle__title">Strategy Driven by Evidence</h3>
-            <p class="principle__text">Our recommendations are grounded in research, validation, and informed decision-making.</p>
-          </div>
-          <div class="principle">
-            <h3 class="principle__title">Development</h3>
-            <p class="principle__text">We design businesses, systems, and capabilities that continue creating value as your business grows.</p>
-          </div>
-          <div class="principle">
-            <h3 class="principle__title">Execution Creates Value</h3>
-            <p class="principle__text">Great strategies matter only when they are translated into consistent action and measurable results.</p>
-          </div>
+    <section class="section about-home">
+      <div class="split">
+        <div>
+          <p class="kicker">About Us</p>
+          <h2 class="display">Built for every stage of business</h2>
         </div>
-      </div>
-    </section>
-
-    <section class="team">
-      <div class="container">
-        <h2 class="team__title">Meet our team</h2>
-        <div class="team__list">
-          <article class="member">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&amp;h=600&amp;fit=crop&amp;auto=format" alt="Naveen Kumar" width="600" height="600" loading="lazy">
+        <div class="about-home__lead">
+          <p class="lead">We are a Business Design &amp; Growth Consultancy helping entrepreneurs, startups, and MSMEs build scalable businesses through innovation, strategy, operational systems, and execution.</p>
+          <hr class="rule">
+          <div class="about-home__row">
+            <img src="assets/img/about-intro.jpg" alt="A founder working through plans at a desk" width="900" height="506" loading="lazy">
             <div>
-              <h3 class="member__name">Naveen Kumar</h3>
-              <p class="member__role">Design and Innovation Strategist</p>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn--sm">Connect on LinkedIn</a>
+              <p class="body">We believe every business idea follows a unique journey—shaped by the founder's vision, evolving market needs, and its own set of challenges. With expertise spanning innovation, design thinking, business strategy, and management consulting, we combine creative exploration with structured execution to deliver solutions tailored to your business, helping you build with clarity, confidence, and purpose.</p>
+              <a href="about.html" class="text-link">We started when...</a>
             </div>
-          </article>
-          <article class="member">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&amp;h=600&amp;fit=crop&amp;auto=format" alt="Mahesh Verma" width="600" height="600" loading="lazy">
-            <div>
-              <h3 class="member__name">Mahesh Verma</h3>
-              <p class="member__role">Finance and Business Strategist</p>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="btn btn--sm">Connect on LinkedIn</a>
-            </div>
-          </article>
+          </div>
         </div>
-        <a href="about.html" class="btn">ABOUT US →</a>
       </div>
     </section>
 
-    <section class="connect" id="stay-connected">
-      <div class="container connect__inner">
-        <h2 class="connect__title">Stay<br>Connected</h2>
-        <div class="connect__card">
-          <form class="contact-form">
-            <div class="field">
-              <label for="cf-name">Name*</label>
-              <input id="cf-name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="cf-email">Email id*</label>
-              <input id="cf-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
-            </div>
-            <div class="field">
-              <label for="cf-phone">Phone no*</label>
-              <input id="cf-phone" name="phone" type="tel" placeholder="+91- XXXXXXXXXX" autocomplete="tel" required>
-            </div>
-            <div class="field">
-              <label for="cf-company">Company name*</label>
-              <input id="cf-company" name="company" type="text" placeholder="Enter your company name" autocomplete="organization" required>
-            </div>
-            <div class="field">
-              <label for="cf-position">Position*</label>
-              <input id="cf-position" name="position" type="text" placeholder="Enter your position or title" autocomplete="organization-title" required>
-            </div>
-            <div class="field">
-              <label for="cf-topic">What would you like to discuss?*</label>
-              <input id="cf-topic" name="topic" type="text" placeholder="E.g. Current challenges, Future roadmap, Growth planning etc." required>
-            </div>
-            <button type="submit" class="btn btn--block">
-              <svg width="20" height="20" viewBox="0 0 29.67 29.67" fill="none" aria-hidden="true"><path d="M4.5 14.83h20M14.83 4.5l10.33 10.33-10.33 10.34" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              SUBMIT
-            </button>
-            <p class="form-error" role="alert" hidden>Sorry, something went wrong. Please try again or email us directly.</p>
-          </form>
-          <div class="form-success" role="status" hidden>
-            <div class="form-success__icon" aria-hidden="true">✓</div>
-            <p class="form-success__title">Thank you!</p>
-            <p class="form-success__text">We'll be in touch shortly.</p>
-            <button type="button" class="form-success__again">Submit another</button>
+    <section class="section services-home">
+      <div class="split">
+        <h2 class="display on-navy">Our Services</h2>
+        <p class="lead">Every business journey is unique. Our consulting services are thoughtfully designed to address the specific challenges at each stage of growth, helping you build, strengthen, and scale your business with clarity, structure, and confidence.</p>
+      </div>
+
+      <div class="zigzag">
+        <article class="zz-card">
+          <div class="zz-card__head">
+            <svg viewBox="0 0 44 42" aria-hidden="true"><path d="M22 3.5l4.7 12.5 13.4.6-10.5 8.3 3.6 12.9L22 30.4l-11.2 7.4 3.6-12.9L3.9 16.6l13.4-.6z" fill="none" stroke="#ff6b15" stroke-width="3" stroke-linejoin="round"/></svg>
+            <h3 class="zz-card__title">Get Started</h3>
           </div>
+          <p class="zz-card__text">Turn promising ideas into viable businesses through research, validation, strategic planning, and structured execution that reduces uncertainty and builds confidence.</p>
+        </article>
+        <article class="zz-card">
+          <div class="zz-card__head">
+            <svg viewBox="0 0 44 42" aria-hidden="true"><path d="M22 3.5l4.7 12.5 13.4.6-10.5 8.3 3.6 12.9L22 30.4l-11.2 7.4 3.6-12.9L3.9 16.6l13.4-.6z" fill="none" stroke="#ff6b15" stroke-width="3" stroke-linejoin="round"/></svg>
+            <h3 class="zz-card__title">Strengthen your business</h3>
+          </div>
+          <p class="zz-card__text">Identify hidden gaps, improve performance, and overcome growth challenges with comprehensive business assessments, audits, and targeted strategic improvements.</p>
+        </article>
+        <article class="zz-card">
+          <div class="zz-card__head">
+            <svg viewBox="0 0 44 42" aria-hidden="true"><path d="M22 3.5l4.7 12.5 13.4.6-10.5 8.3 3.6 12.9L22 30.4l-11.2 7.4 3.6-12.9L3.9 16.6l13.4-.6z" fill="none" stroke="#ff6b15" stroke-width="3" stroke-linejoin="round"/></svg>
+            <h3 class="zz-card__title">Build systems to scale</h3>
+          </div>
+          <p class="zz-card__text">Create scalable systems, empower your team, and prepare your business for its next stage of growth with structured frameworks.</p>
+        </article>
+        <article class="zz-card">
+          <div class="zz-card__head">
+            <svg viewBox="0 0 44 42" aria-hidden="true"><path d="M22 3.5l4.7 12.5 13.4.6-10.5 8.3 3.6 12.9L22 30.4l-11.2 7.4 3.6-12.9L3.9 16.6l13.4-.6z" fill="none" stroke="#ff6b15" stroke-width="3" stroke-linejoin="round"/></svg>
+            <h3 class="zz-card__title">Lead with clarity</h3>
+          </div>
+          <p class="zz-card__text">Develop stronger leadership, aligned teams, and clear strategic direction to make confident decisions, foster innovation, and drive long-term business success.</p>
+        </article>
+      </div>
+
+      <div class="center">
+        <a href="services.html" class="btn btn--icon"><svg class="btn__icon" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#fff"/><path d="M8.5 15h12M15.5 10l5 5-5 5" fill="none" stroke="#ff6b15" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>EXPLORE SERVICES</a>
+      </div>
+    </section>
+
+    <section class="section approach">
+      <div class="split">
+        <h2 class="display">Every business is unique. So every solution should be too.</h2>
+        <div class="approach__intro">
+          <p class="body">We believe successful businesses aren't built by templates or one-size-fits-all advice. Our approach combines strategic thinking with hands-on execution to deliver solutions that are practical, contextual, and built for lasting impact.</p>
+          <div class="principles">
+            <article class="principle">
+              <svg viewBox="0 0 46 46" aria-hidden="true" fill="none" stroke="#ff6b15" stroke-width="2.5" stroke-linecap="round"><circle cx="23" cy="23" r="8"/><path d="M23 3v6M23 37v6M3 23h6M37 23h6M8.9 8.9l4.2 4.2M32.9 32.9l4.2 4.2M8.9 37.1l4.2-4.2M32.9 13.1l4.2-4.2"/></svg>
+              <div>
+                <h3 class="principle__title">Context Before Frameworks</h3>
+                <p class="body">We begin by understanding your business before applying any model or methodology.</p>
+              </div>
+            </article>
+            <article class="principle">
+              <svg viewBox="0 0 46 46" aria-hidden="true" fill="none" stroke="#ff6b15" stroke-width="2.5" stroke-linecap="round"><circle cx="23" cy="23" r="8"/><path d="M23 3v6M23 37v6M3 23h6M37 23h6M8.9 8.9l4.2 4.2M32.9 32.9l4.2 4.2M8.9 37.1l4.2-4.2M32.9 13.1l4.2-4.2"/></svg>
+              <div>
+                <h3 class="principle__title">Strategy Driven by Evidence</h3>
+                <p class="body">Our recommendations are grounded in research, validation, and informed decision-making.</p>
+              </div>
+            </article>
+            <article class="principle">
+              <svg viewBox="0 0 46 46" aria-hidden="true" fill="none" stroke="#ff6b15" stroke-width="2.5" stroke-linecap="round"><circle cx="23" cy="23" r="8"/><path d="M23 3v6M23 37v6M3 23h6M37 23h6M8.9 8.9l4.2 4.2M32.9 32.9l4.2 4.2M8.9 37.1l4.2-4.2M32.9 13.1l4.2-4.2"/></svg>
+              <div>
+                <h3 class="principle__title">Development</h3>
+                <p class="body">We design businesses, systems, and capabilities that continue creating value as your business grows.</p>
+              </div>
+            </article>
+            <article class="principle">
+              <svg viewBox="0 0 46 46" aria-hidden="true" fill="none" stroke="#ff6b15" stroke-width="2.5" stroke-linecap="round"><circle cx="23" cy="23" r="8"/><path d="M23 3v6M23 37v6M3 23h6M37 23h6M8.9 8.9l4.2 4.2M32.9 32.9l4.2 4.2M8.9 37.1l4.2-4.2M32.9 13.1l4.2-4.2"/></svg>
+              <div>
+                <h3 class="principle__title">Execution Creates Value</h3>
+                <p class="body">Great strategies matter only when they are translated into consistent action and measurable results.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team">
+      <div class="split">
+        <h2 class="display">Meet our<br>team</h2>
+        <p class="body team__intro">We believe sustainable growth is built through well-informed strategy and disciplined execution. Combining expertise in innovation, business design, strategy, and management, we partner with businesses to turn ideas into action and plans into measurable results.</p>
+      </div>
+
+      <div class="team__list">
+        <article class="member">
+          <img src="assets/img/founder.jpg" alt="Naveen Kumar" width="1000" height="650" loading="lazy">
+          <div>
+            <h3 class="member__name">Naveen Kumar</h3>
+            <p class="body">We believe sustainable growth is built through well-informed strategy and disciplined execution. Combining expertise in innovation, business design, strategy, and management, we partner with businesses to turn ideas into action and plans into measurable results.</p>
+          </div>
+        </article>
+        <article class="member">
+          <img src="assets/img/founder.jpg" alt="Mahesh Verma" width="1000" height="650" loading="lazy">
+          <div>
+            <h3 class="member__name">Mahesh Verma</h3>
+            <p class="body">We believe sustainable growth is built through well-informed strategy and disciplined execution. Combining expertise in innovation, business design, strategy, and management, we partner with businesses to turn ideas into action and plans into measurable results.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="center">
+        <a href="about.html" class="btn btn--icon"><svg class="btn__icon" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#fff"/><path d="M8.5 15h12M15.5 10l5 5-5 5" fill="none" stroke="#ff6b15" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>ABOUT US</a>
+      </div>
+    </section>
+
+    <section class="section connect" id="stay-connected">
+      <h2 class="display">Stay<br>Connected</h2>
+      <div class="form-card">
+        <form class="contact-form">
+          <div class="field">
+            <label for="cf-name">Name*</label>
+            <input id="cf-name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">Email id*</label>
+            <input id="cf-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="cf-phone">Phone no*</label>
+            <input id="cf-phone" name="phone" type="tel" placeholder="+91- XXXXXXXXXX" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="cf-company">Company name*</label>
+            <input id="cf-company" name="company" type="text" placeholder="Enter your company name" autocomplete="organization" required>
+          </div>
+          <div class="field">
+            <label for="cf-position">Position*</label>
+            <input id="cf-position" name="position" type="text" placeholder="Enter your position or title" autocomplete="organization-title" required>
+          </div>
+          <div class="field">
+            <label for="cf-topic">What would you like to discuss?*</label>
+            <textarea id="cf-topic" name="topic" rows="2" placeholder="E.g. Current challenges, Future roadmap, Growth planning etc." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--block"><svg class="btn__icon" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#fff"/><path d="M8.5 15h12M15.5 10l5 5-5 5" fill="none" stroke="#ff6b15" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="btn__label">SUBMIT</span></button>
+          <p class="form-note" role="alert" hidden>Sorry, something went wrong. Please try again or email us directly.</p>
+        </form>
+        <div class="form-done" role="status" hidden>
+          <div class="form-done__icon" aria-hidden="true">✓</div>
+          <p class="form-done__title">Thank you!</p>
+          <p class="form-done__text">We'll be in touch shortly.</p>
+          <button class="text-link" type="button">Submit another</button>
         </div>
       </div>
     </section>
 
     <div class="banner">
-      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&amp;h=500&amp;fit=crop&amp;auto=format" alt="Team meeting" width="1400" height="500" loading="lazy">
+      <img src="assets/img/banner-meeting.jpg" alt="The Extion team in a meeting" width="1351" height="580" loading="lazy">
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="site-footer__inner">
-      <div>
-        <a href="index.html" class="logo" aria-label="Extion Consulting — home">
-          <span>Extion<br><span class="logo__accent">Consulting</span></span>
-        </a>
-        <a href="contact.html" class="btn-outline">Get in touch</a>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="Extion Consulting — home" width="179" height="61" loading="lazy"></a>
+        <a href="contact.html#stay-connected" class="btn-outline" data-popup="Get in touch">Get in touch</a>
       </div>
-      <div>
+      <div class="footer-col">
         <p class="footer-text">+91-98 XXXX XXXX<br><a href="mailto:info@extionconsulting.com">info@extionconsulting.com</a></p>
         <a href="#" class="footer-link">Privacy Policy</a>
       </div>
-      <div>
+      <div class="footer-col">
         <address class="footer-text">Head Office:<br>ABC, Sonipat,<br>Haryana - 131001</address>
         <a href="#" class="footer-link">Accessibility Statement</a>
       </div>
-      <div>
-        <p class="footer-text">All rights reserved<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extion Consulting</p>
-        <span class="copyright-mark" role="img" aria-label="Copyright">C</span>
+      <div class="footer-col">
+        <p class="footer-text">All rights reserved<br>© Extion Consulting</p>
       </div>
     </div>
   </footer>
