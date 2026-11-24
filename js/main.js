@@ -4,6 +4,13 @@
 // (see google-apps-script/Code.gs). Leave empty to only show the thank-you message.
 const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxHXrgj2TMLYuu9Oq4XUC354wrJmMe2qf5dyx9xRy15WdnQY5a9AwE9_oePzWR7cg4ARA/exec";
 
+// Google Analytics command queue. Tag Manager (in each page's <head>) loads the
+// Google tag, which picks up commands pushed here.
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  window.dataLayer.push(arguments);
+}
+
 const ARROW_ICON = `<svg class="btn__icon" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#fff"/><path d="M8.5 15h12M15.5 10l5 5-5 5" fill="none" stroke="#ff6b15" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
 // Mobile menu ---------------------------------------------------------------
@@ -30,9 +37,9 @@ async function sendEnquiry(form) {
   const result = await response.json();
   if (!result.ok) throw new Error(result.error || "Not saved");
 
-  // Lets Google Tag Manager count the enquiry as a lead. Only the form name is
-  // sent, never the visitor's personal details.
-  window.dataLayer?.push({ event: "generate_lead", form_source: data.get("source") });
+  // Counts the enquiry as a lead in Google Analytics. Only the form name is sent,
+  // never the visitor's personal details.
+  gtag("event", "generate_lead", { form_source: data.get("source") });
 }
 
 // Sends the form (when FORM_ENDPOINT is set) and swaps it for a thank-you note.

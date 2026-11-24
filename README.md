@@ -52,28 +52,28 @@ Setup (once, by someone with edit access to the sheet):
 If you change `Code.gs` later, use **Deploy → Manage deployments → Edit → New
 version** so the URL stays the same.
 
-## Analytics (Google Tag Manager)
+## Analytics (Google Tag Manager + Google Analytics)
 
 Every page loads Google Tag Manager container `GTM-NVSBZQLS` (Google's official
 snippet: in `<head>`, plus the `<noscript>` fallback right after `<body>`). The
-container already sends page views to Google Analytics 4 (`G-SZNFB21TSL`).
+container loads the Google tag for the Google Analytics 4 property
+"DBS Website COM" (`G-SZNFB21TSL`), which records page views.
 
-When an enquiry is saved, the site also pushes this to the data layer:
+When an enquiry is saved, `js/main.js` also sends a `generate_lead` event straight
+to Google Analytics through that Google tag:
 
 ```js
-{ event: "generate_lead", form_source: "Pop-up: Book a free consultation" }
+gtag("event", "generate_lead", { form_source: "Pop-up: Book a free consultation" });
 ```
 
-Only the form name is sent, never the visitor's personal details. To count these
-leads in Google Analytics, in Tag Manager:
+No Tag Manager setup is needed for this, and only the form name is sent, never
+the visitor's personal details. Don't also add a Tag Manager tag for
+`generate_lead`, or each lead would be counted twice.
 
-1. **Variables → New → Data Layer Variable**, name `form_source`.
-2. **Triggers → New → Custom Event**, event name `generate_lead`.
-3. **Tags → New → Google Analytics: GA4 Event**, measurement ID `G-SZNFB21TSL`,
-   event name `generate_lead`, event parameter `form_source` = `{{form_source}}`,
-   fired by the trigger from step 2.
-4. **Submit / Publish** the container.
-5. In Google Analytics, **Admin → Events**, mark `generate_lead` as a key event.
+**Still to do once:** after the first real enquiry comes in (it can take up to a
+day to appear), in Google Analytics go to **Admin → Data display → Events →
+Recent events** and click the star next to `generate_lead` to make it a key event.
+Analytics doesn't allow marking an event before it has been received.
 
 ## Client feedback applied
 
