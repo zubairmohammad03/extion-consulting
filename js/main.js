@@ -29,6 +29,10 @@ async function sendEnquiry(form) {
   const response = await fetch(FORM_ENDPOINT, { method: "POST", body: new URLSearchParams(data) });
   const result = await response.json();
   if (!result.ok) throw new Error(result.error || "Not saved");
+
+  // Lets Google Tag Manager count the enquiry as a lead. Only the form name is
+  // sent, never the visitor's personal details.
+  window.dataLayer?.push({ event: "generate_lead", form_source: data.get("source") });
 }
 
 // Sends the form (when FORM_ENDPOINT is set) and swaps it for a thank-you note.

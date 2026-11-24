@@ -52,6 +52,29 @@ Setup (once, by someone with edit access to the sheet):
 If you change `Code.gs` later, use **Deploy → Manage deployments → Edit → New
 version** so the URL stays the same.
 
+## Analytics (Google Tag Manager)
+
+Every page loads Google Tag Manager container `GTM-NVSBZQLS` (Google's official
+snippet: in `<head>`, plus the `<noscript>` fallback right after `<body>`). The
+container already sends page views to Google Analytics 4 (`G-SZNFB21TSL`).
+
+When an enquiry is saved, the site also pushes this to the data layer:
+
+```js
+{ event: "generate_lead", form_source: "Pop-up: Book a free consultation" }
+```
+
+Only the form name is sent, never the visitor's personal details. To count these
+leads in Google Analytics, in Tag Manager:
+
+1. **Variables → New → Data Layer Variable**, name `form_source`.
+2. **Triggers → New → Custom Event**, event name `generate_lead`.
+3. **Tags → New → Google Analytics: GA4 Event**, measurement ID `G-SZNFB21TSL`,
+   event name `generate_lead`, event parameter `form_source` = `{{form_source}}`,
+   fired by the trigger from step 2.
+4. **Submit / Publish** the container.
+5. In Google Analytics, **Admin → Events**, mark `generate_lead` as a key event.
+
 ## Client feedback applied
 
 1. **Footer text** is 12px regular (not bold).
