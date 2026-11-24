@@ -730,7 +730,15 @@ a.stage-card:hover .stage-card__title { color: var(--orange-deep); }
 .footer-link:hover,
 .footer-text a:hover { color: var(--orange); }
 
-.site-footer .logo img { width: 179px; border-radius: 0; }
+.footer-text { overflow-wrap: anywhere; }
+
+.footer-brand {
+  font-family: var(--font-rc);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.15;
+  color: #fff;
+}
 
 /* Services page ------------------------------------------------------------ */
 

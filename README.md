@@ -50,10 +50,12 @@ cPanel / shared hosting). `index.html` is the home page.
 - **Contact forms**: they show a thank-you message but don't send anywhere yet. Set
   `FORM_ENDPOINT` at the top of `js/main.js` to a form service URL (e.g. Formspree).
   This covers the "Stay Connected" forms and the pop-up.
-- **Placeholders from the design**: phone numbers (`+91-98 XXXX XXXX`,
-  `+91-99XXXXXX00`), the address ("ABC, Sonipat"), LinkedIn links, Privacy Policy and
+- **Footer** shows Delhi Business Studio's name, phone, email, websites and
+  address (Delhi, India). Edit it in all five HTML files if these change.
+- **Placeholders from the design**: the Contact page phone number
+  (`+91-99XXXXXX00`), LinkedIn links, Privacy Policy and
   Accessibility Statement links, and the "Access resource" / framework links (`#`).
-- **Emails differ**: footer says `info@extionconsulting.com`, Contact page says
+- **Emails differ**: footer says `delhibusinessstudio@gmail.com`, Contact page says
   `info@Extion.com`.
 - **Photos**: both founders and all nine experts use the same placeholder portrait.
 - **Team bios** on Home repeat the section intro text, as in the design.
