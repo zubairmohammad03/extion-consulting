@@ -15,6 +15,7 @@ Plain HTML, CSS and JavaScript: no build step, no dependencies.
 | `css/styles.css` | All styles; colors, fonts and the layout gutter are variables at the top |
 | `js/main.js` | Mobile menu, pop-up form, form sending, resource search |
 | `assets/img/` | Photos and logo exported from the Figma design |
+| `google-apps-script/Code.gs` | Script that saves form enquiries to the client's Google Sheet |
 
 Fonts (Radio Canada, Radio Canada Big, Roboto) load from Google Fonts.
 
@@ -30,6 +31,26 @@ python -m http.server 8000
 
 Upload the whole folder to any static host (Netlify, Vercel, GitHub Pages,
 cPanel / shared hosting). `index.html` is the home page.
+
+## Form enquiries → Google Sheet
+
+Both the "Stay Connected" form and the pop-up form send each enquiry to the
+client's Google Sheet ("Contact_Forms"). Each one becomes a row with:
+Timestamp, Name, Email, Phone, Company, Position, Message, Source (which form or
+button) and Page. The header row is added automatically on the first enquiry.
+
+Setup (once, by someone with edit access to the sheet):
+
+1. Open the sheet, then **Extensions → Apps Script**.
+2. Replace the code in `Code.gs` with `google-apps-script/Code.gs` from this repo,
+   and click **Save**.
+3. **Deploy → New deployment**, choose type **Web app**, set
+   *Execute as: Me* and *Who has access: Anyone*, then **Deploy** and allow access.
+4. Copy the **Web app URL** (`https://script.google.com/macros/s/…/exec`) into
+   `FORM_ENDPOINT` at the top of `js/main.js`.
+
+If you change `Code.gs` later, use **Deploy → Manage deployments → Edit → New
+version** so the URL stays the same.
 
 ## Client feedback applied
 
@@ -47,9 +68,8 @@ cPanel / shared hosting). `index.html` is the home page.
 
 ## Before going live
 
-- **Contact forms**: they show a thank-you message but don't send anywhere yet. Set
-  `FORM_ENDPOINT` at the top of `js/main.js` to a form service URL (e.g. Formspree).
-  This covers the "Stay Connected" forms and the pop-up.
+- **Contact forms**: until `FORM_ENDPOINT` is set (see above), they show the
+  thank-you message but save nothing.
 - **Footer** shows Delhi Business Studio's name, phone, email, websites and
   address (Delhi, India). Edit it in all five HTML files if these change.
 - **Placeholders from the design**: the Contact page phone number

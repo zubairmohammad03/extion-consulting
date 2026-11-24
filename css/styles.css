@@ -615,6 +615,15 @@ a.stage-card:hover .stage-card__title { color: var(--orange-deep); }
 
 .field + .field { margin-top: 23px; }
 
+/* Hidden spam trap: bots fill it in, people never see it */
+.hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 .field label {
   display: block;
   font-family: var(--font-rcb);

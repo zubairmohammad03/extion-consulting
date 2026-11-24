@@ -1,8 +1,8 @@
 /* Extion Consulting — site interactions */
 
-// Where enquiries are sent. Leave empty to only show the thank-you message,
-// or paste a form service URL (e.g. https://formspree.io/f/xxxx) to receive them.
-const FORM_ENDPOINT = "";
+// Google Apps Script web app that saves enquiries to the client's Google Sheet
+// (see google-apps-script/Code.gs). Leave empty to only show the thank-you message.
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbxHXrgj2TMLYuu9Oq4XUC354wrJmMe2qf5dyx9xRy15WdnQY5a9AwE9_oePzWR7cg4ARA/exec";
 
 const ARROW_ICON = `<svg class="btn__icon" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#fff"/><path d="M8.5 15h12M15.5 10l5 5-5 5" fill="none" stroke="#ff6b15" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 
@@ -20,10 +20,22 @@ if (menuToggle && mobileNav) {
 }
 
 // Forms ---------------------------------------------------------------------
+// Adds one row to the Google Sheet; throws if it wasn't saved.
+async function sendEnquiry(form) {
+  const data = new FormData(form);
+  data.set("source", data.get("source") || "Stay Connected form");
+  data.set("page", document.title);
+
+  const response = await fetch(FORM_ENDPOINT, { method: "POST", body: new URLSearchParams(data) });
+  const result = await response.json();
+  if (!result.ok) throw new Error(result.error || "Not saved");
+}
+
 // Sends the form (when FORM_ENDPOINT is set) and swaps it for a thank-you note.
 function initForm(form, onDone) {
   const error = form.querySelector(".form-note");
   const submit = form.querySelector("button[type='submit']");
+  const label = submit.querySelector(".btn__label");
   const done = form.parentElement.querySelector(".form-done");
 
   form.addEventListener("submit", async (event) => {
@@ -32,19 +44,16 @@ function initForm(form, onDone) {
 
     if (FORM_ENDPOINT) {
       submit.disabled = true;
+      label.textContent = "SENDING…";
       try {
-        const response = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        await sendEnquiry(form);
       } catch {
         error.hidden = false;
-        submit.disabled = false;
         return;
+      } finally {
+        submit.disabled = false;
+        label.textContent = "SUBMIT";
       }
-      submit.disabled = false;
     }
 
     form.reset();
@@ -61,7 +70,7 @@ function initForm(form, onDone) {
 }
 
 document.querySelectorAll(".form-card .contact-form").forEach((form) => {
-  initForm(form, () => form.querySelector("input")?.focus());
+  initForm(form, () => form.querySelector(".field input")?.focus());
 });
 
 // Pop-up form ------------------------------------------------------------------
@@ -79,7 +88,8 @@ popup.innerHTML = `
     <h2 class="popup__title" id="popup-title">Let's talk about your business</h2>
     <p class="popup__text">Share a few details and we'll get back to you shortly.</p>
     <form class="contact-form">
-      <input type="hidden" name="enquiry">
+      <input type="hidden" name="source">
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="field">
         <label for="pf-name">Name*</label>
         <input id="pf-name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required>
@@ -123,7 +133,7 @@ let lastTrigger = null;
 function openPopup(trigger) {
   const label = trigger.dataset.popup || trigger.textContent.trim();
   popup.querySelector(".popup__eyebrow").textContent = label;
-  popupForm.elements.enquiry.value = `${label} (${document.title})`;
+  popupForm.elements.source.value = `Pop-up: ${label}`;
   if (trigger.dataset.topic && !popupTopic.value) popupTopic.value = trigger.dataset.topic;
 
   lastTrigger = trigger;
